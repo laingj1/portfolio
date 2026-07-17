@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justin Laing — Website Manager &amp; Communications</title>
+  <meta name="description" content="Portfolio of Justin Laing, website manager at Yale University. Experience, technical projects, skills, and contact.">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:title" content="Justin Laing — Website Manager &amp; Communications">
+  <meta property="og:description" content="Website management, technical project leadership, and communications work.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#top">Justin Laing</a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#projects">Apps</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="hero__eyebrow">Website Manager · Yale University</p>
+        <h1 class="hero__title">Hi, I'm Justin Laing.</h1>
+        <p class="hero__lead">I manage a portfolio of university websites and lead technical upgrade projects — bridging communications, content, and web development. On the side, I build small apps with AI.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#projects">View my work</a>
+          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal projects: AI-built apps -->
+    <section class="section" id="projects" aria-labelledby="projects-h">
+      <div class="container">
+        <p class="section__kicker">Personal</p>
+        <h2 id="projects-h" class="section__title">Apps I've built with AI</h2>
+        <p class="section__intro">Side projects I designed and shipped for personal use, using AI as a pair programmer. These are separate from my professional work — built on my own time to solve real problems at home. Each note is honest about what the AI handled and what I directed and decided.</p>
+
+        <div class="cases">
+          <!-- Case study 1 -->
+          <article class="case">
+            <div class="case__media">
+              <img src="images/budget-app.png" alt="Screenshot of the weekly budget app showing category spending and a weekly summary." loading="lazy" width="640" height="400">
+            </div>
+            <div class="case__body">
+              <h3 class="case__title">Weekly Budget Tracker</h3>
+              <ul class="card__tags">
+                <li>React</li><li>LocalStorage</li><li>Charts</li>
+              </ul>
+              <p class="case__desc"><strong>Problem.</strong> I wanted a fast way to track spending by week without a subscription app or a spreadsheet I'd never open.</p>
+              <p class="case__desc"><strong>Approach.</strong> A single-page app that logs expenses, buckets them by category, and shows a weekly summary with a simple chart.</p>
+              <dl class="case__split">
+                <div>
+                  <dt>What I directed</dt>
+                  <dd>Data model, category logic, UX flow, edge cases (partial weeks, edits), and final review of every change.</dd>
+                </div>
+                <div>
+                  <dt>What AI handled</dt>
+                  <dd>Boilerplate components, chart wiring, and first-draft functions I then tested and refined.</dd>
+                </div>
+              </dl>
+              <p class="case__links">
+                <a class="btn btn--primary" href="#" rel="noopener">Live demo</a>
+                <a class="card__link" href="#">Write-up<span aria-hidden="true"> →</span></a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Case study 2 -->
+          <article class="case">
+            <div class="case__media">
+              <img src="images/baby-app.png" alt="Screenshot of the baby tracking app showing feed, sleep, and diaper logs with timestamps." loading="lazy" width="640" height="400">
+            </div>
+            <div class="case__body">
+              <h3 class="case__title">Baby Tracker</h3>
+              <ul class="card__tags">
+                <li>React</li><li>PWA</li><li>Offline-first</li>
+              </ul>
+              <p class="case__desc"><strong>Problem.</strong> New-parent sleep deprivation meant I needed a one-tap way to log feeds, sleep, and diaper changes — fast, on a phone, often one-handed.</p>
+              <p class="case__desc"><strong>Approach.</strong> An offline-first PWA with big tap targets, timestamped logs, and a daily view to spot patterns.</p>
+              <dl class="case__split">
+                <div>
+                  <dt>What I directed</dt>
+                  <dd>The whole interaction design for tired hands, offline data strategy, and privacy (everything stays on-device).</dd>
+                </div>
+                <div>
+                  <dt>What AI handled</dt>
+                  <dd>Service-worker setup, state management scaffolding, and repetitive UI code.</dd>
+                </div>
+              </dl>
+              <p class="case__links">
+                <a class="btn btn--primary" href="#" rel="noopener">Live demo</a>
+                <a class="card__link" href="#">Write-up<span aria-hidden="true"> →</span></a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience: interactive timeline -->
+    <section class="section section--alt" id="experience" aria-labelledby="experience-h">
+      <div class="container">
+        <div class="exp__head">
+          <p class="section__kicker">Professional</p>
+          <h2 id="experience-h" class="section__title">Experience</h2>
+          <a class="btn btn--ghost" href="resume.pdf" download>Download résumé (PDF)</a>
+        </div>
+
+        <!-- Skill filter -->
+        <div class="exp__filter" role="group" aria-label="Filter roles by skill">
+          <span class="exp__filter-label">Filter:</span>
+          <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="web" aria-pressed="false">Web / Technical</button>
+          <button type="button" class="chip" data-filter="comms" aria-pressed="false">Communications</button>
+          <button type="button" class="chip" data-filter="design" aria-pressed="false">Design</button>
+        </div>
+
+        <ol class="timeline">
+          <!-- Current role: built out from FY24–FY26 assessments -->
+          <li class="tl" data-tags="web comms">
+            <details class="tl__item" open>
+              <summary class="tl__summary">
+                <span class="tl__dot" aria-hidden="true"></span>
+                <span class="tl__role">Website Manager</span>
+                <span class="tl__meta">Office of Public Affairs &amp; Communications, Yale University · Jul 2022–present</span>
+              </summary>
+              <div class="tl__detail">
+                <p>Manage a portfolio of 13 university websites, including the flagship <em>It's Your Yale</em>, coordinating a network of 300+ content contributors to keep content accurate, consistent, and free of duplication.</p>
+                <ul class="tl__list">
+                  <li>Served as technical lead on a major web platform upgrade, partnering with an external vendor for the first time and delivering a multi-site migration of thousands of pages on time and under budget.</li>
+                  <li>Built and maintained an editorial and site style guide that standardized voice, tone, and presentation — work that grew into a campus-wide effort to scale content standards.</li>
+                  <li>Supported an AI chatbot assistant (QA testing, launch, and ongoing accuracy) to reduce tier-zero support requests, and joined AI working groups shaping responsible AI practices in university communications.</li>
+                  <li>Led analytics strategy through a platform transition: migrated to Google Analytics 4 and Google Tag Manager, and built self-service LookerStudio dashboards that let clients track their own content performance.</li>
+                  <li>Acted as project lead on multiple site-upgrade projects, providing timeline structure, requirements gathering, and strategic guidance for senior leadership and faculty stakeholders.</li>
+                </ul>
+                <ul class="card__tags"><li>Drupal</li><li>Technical Lead</li><li>Analytics</li><li>Accessibility</li><li>AI</li></ul>
+              </div>
+            </details>
+          </li>
+
+          <!-- Past roles: from resume -->
+          <li class="tl" data-tags="web design">
+            <details class="tl__item">
+              <summary class="tl__summary">
+                <span class="tl__dot" aria-hidden="true"></span>
+                <span class="tl__role">Graphics / Web Assistant II</span>
+                <span class="tl__meta">Department of Emergency Medicine, Yale School of Medicine · Oct 2019–Jul 2022</span>
+              </summary>
+              <div class="tl__detail">
+                <ul class="tl__list">
+                  <li>Designed, edited, and developed website content, managing incoming web requests end to end.</li>
+                  <li>Identified and resolved website problems and tested pages for accuracy and functionality.</li>
+                  <li>Designed and formatted print materials including publications, brochures, and newsletters.</li>
+                </ul>
+                <ul class="card__tags"><li>Web Development</li><li>Design</li></ul>
+              </div>
+            </details>
+          </li>
+
+          <li class="tl" data-tags="comms design">
+            <details class="tl__item">
+              <summary class="tl__summary">
+                <span class="tl__dot" aria-hidden="true"></span>
+                <span class="tl__role">Communications Intern</span>
+                <span class="tl__meta">Department of Emergency Medicine, Yale School of Medicine · May 2019–Oct 2019</span>
+              </summary>
+              <div class="tl__detail">
+                <ul class="tl__list">
+                  <li>Created and compiled content for newsletters, social media, and articles.</li>
+                  <li>Managed social media platforms, optimized the department website, and designed graphics for publications.</li>
+                </ul>
+                <ul class="card__tags"><li>Communications</li><li>Social Media</li></ul>
+              </div>
+            </details>
+          </li>
+
+          <li class="tl" data-tags="design comms">
+            <details class="tl__item">
+              <summary class="tl__summary">
+                <span class="tl__dot" aria-hidden="true"></span>
+                <span class="tl__role">Student University Photographer</span>
+                <span class="tl__meta">Office of Integrated Communications &amp; Marketing, SCSU · Aug 2018–Jul 2019</span>
+              </summary>
+              <div class="tl__detail">
+                <ul class="tl__list">
+                  <li>Photographed events and subjects across a range of university needs.</li>
+                  <li>Collaborated with departments and external partners to support the university brand, and updated website content using Drupal templates.</li>
+                </ul>
+                <ul class="card__tags"><li>Photography</li><li>Brand</li></ul>
+              </div>
+            </details>
+          </li>
+        </ol>
+        <p class="exp__empty" id="exp-empty" hidden>No roles match that filter.</p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section--alt" id="about" aria-labelledby="about-h">
+      <div class="container about">
+        <h2 id="about-h" class="section__title">About</h2>
+        <p>I'm a website manager in Yale's Office of Public Affairs &amp; Communications, where I sit at the intersection of content and technical delivery — managing a portfolio of sites, leading upgrade projects, and helping communicators across campus do more with the web.</p>
+        <p>I hold an MBA in Management from the University of Hartford and a B.S. in Public Health from Southern Connecticut State University. I care about clear communication, accessible design, and building things — whether that's a large university platform or a small app for my own family. I'm working toward a more technical lead role and actively deepening my platform and development skills.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills" aria-labelledby="skills-h">
+      <div class="container">
+        <h2 id="skills-h" class="section__title">Skills &amp; Tools</h2>
+        <div class="skillgroups">
+          <div class="skillgroup">
+            <h3 class="skillgroup__title">Platforms &amp; CMS</h3>
+            <ul class="skills">
+              <li>Drupal</li>
+              <li>SharePoint</li>
+              <li>WordPress</li>
+              <li>SDL Tridion</li>
+            </ul>
+          </div>
+          <div class="skillgroup">
+            <h3 class="skillgroup__title">Analytics &amp; SEO</h3>
+            <ul class="skills">
+              <li>Google Analytics 4</li>
+              <li>Google Tag Manager</li>
+              <li>Search Console</li>
+              <li>LookerStudio</li>
+              <li>Siteimprove</li>
+            </ul>
+          </div>
+          <div class="skillgroup">
+            <h3 class="skillgroup__title">Design &amp; Content</h3>
+            <ul class="skills">
+              <li>Adobe Suite</li>
+              <li>Salesforce Email</li>
+              <li>AirTable</li>
+              <li>Qualtrics</li>
+              <li>Microsoft Office</li>
+            </ul>
+          </div>
+          <div class="skillgroup">
+            <h3 class="skillgroup__title">Practice</h3>
+            <ul class="skills">
+              <li>Technical project leadership</li>
+              <li>Web accessibility</li>
+              <li>Requirements gathering</li>
+              <li>AI-assisted development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--alt" id="contact" aria-labelledby="contact-h">
+      <div class="container container--narrow">
+        <h2 id="contact-h" class="section__title">Contact</h2>
+        <p>Have a project or role in mind? Send a message.</p>
+
+        <!-- Replace YOUR_ID with a Formspree form ID (formspree.io) — no backend needed.
+             Works without JS; JS just improves the feedback. -->
+        <form class="form" id="contact-form" action="https://formspree.io/f/YOUR_ID" method="POST" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Send message</button>
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Justin Laing. Built with plain HTML, CSS &amp; JS.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
