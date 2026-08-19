@@ -202,23 +202,19 @@
           <a class="btn btn--ghost" href="resume.pdf" download>Download résumé (PDF)</a>
         </div>
 
-        <!-- Skill filter -->
-        <div class="exp__filter" role="group" aria-label="Filter roles by skill">
-          <span class="exp__filter-label">Filter:</span>
-          <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All</button>
-          <button type="button" class="chip" data-filter="web" aria-pressed="false">Web / Technical</button>
-          <button type="button" class="chip" data-filter="comms" aria-pressed="false">Communications</button>
-          <button type="button" class="chip" data-filter="design" aria-pressed="false">Design</button>
-        </div>
+        <p class="exp__hint">Click any role to expand the details.</p>
 
         <ol class="timeline">
           <!-- Current role: built out from FY24–FY26 assessments -->
-          <li class="tl" data-tags="web comms">
+          <li class="tl">
             <details class="tl__item" open>
               <summary class="tl__summary">
                 <span class="tl__dot" aria-hidden="true"></span>
-                <span class="tl__role">Website Manager</span>
-                <span class="tl__meta">Office of Public Affairs &amp; Communications, Yale University · Jul 2022–present</span>
+                <span class="tl__summary-text">
+                  <span class="tl__role">Website Manager</span>
+                  <span class="tl__meta">Office of Public Affairs &amp; Communications, Yale University · Jul 2022–present</span>
+                </span>
+                <svg class="tl__chevron" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
               </summary>
               <div class="tl__detail">
                 <p>Manage a portfolio of 13 university websites, including the flagship <em>It's Your Yale</em>, coordinating a network of 20+ content contributors to keep content accurate, consistent, and free of duplication.</p>
@@ -235,12 +231,15 @@
           </li>
 
           <!-- Past roles: from resume -->
-          <li class="tl" data-tags="web design">
+          <li class="tl">
             <details class="tl__item">
               <summary class="tl__summary">
                 <span class="tl__dot" aria-hidden="true"></span>
-                <span class="tl__role">Graphics / Web Assistant II</span>
-                <span class="tl__meta">Department of Emergency Medicine, Yale School of Medicine · Oct 2019–Jul 2022</span>
+                <span class="tl__summary-text">
+                  <span class="tl__role">Graphics / Web Assistant II</span>
+                  <span class="tl__meta">Department of Emergency Medicine, Yale School of Medicine · Oct 2019–Jul 2022</span>
+                </span>
+                <svg class="tl__chevron" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
               </summary>
               <div class="tl__detail">
                 <ul class="tl__list">
@@ -253,12 +252,15 @@
             </details>
           </li>
 
-          <li class="tl" data-tags="comms design">
+          <li class="tl">
             <details class="tl__item">
               <summary class="tl__summary">
                 <span class="tl__dot" aria-hidden="true"></span>
-                <span class="tl__role">Communications Intern</span>
-                <span class="tl__meta">Department of Emergency Medicine, Yale School of Medicine · May 2019–Oct 2019</span>
+                <span class="tl__summary-text">
+                  <span class="tl__role">Communications Intern</span>
+                  <span class="tl__meta">Department of Emergency Medicine, Yale School of Medicine · May 2019–Oct 2019</span>
+                </span>
+                <svg class="tl__chevron" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
               </summary>
               <div class="tl__detail">
                 <ul class="tl__list">
@@ -270,12 +272,15 @@
             </details>
           </li>
 
-          <li class="tl" data-tags="design comms">
+          <li class="tl">
             <details class="tl__item">
               <summary class="tl__summary">
                 <span class="tl__dot" aria-hidden="true"></span>
-                <span class="tl__role">Student University Photographer</span>
-                <span class="tl__meta">Office of Integrated Communications &amp; Marketing, SCSU · Aug 2018–Jul 2019</span>
+                <span class="tl__summary-text">
+                  <span class="tl__role">Student University Photographer</span>
+                  <span class="tl__meta">Office of Integrated Communications &amp; Marketing, SCSU · Aug 2018–Jul 2019</span>
+                </span>
+                <svg class="tl__chevron" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
               </summary>
               <div class="tl__detail">
                 <ul class="tl__list">
@@ -287,7 +292,6 @@
             </details>
           </li>
         </ol>
-        <p class="exp__empty" id="exp-empty" hidden>No roles match that filter.</p>
       </div>
     </section>
 
@@ -358,9 +362,11 @@
           <p>Have a project or role in mind? Send a message and I'll get back to you.</p>
         </div>
 
-        <!-- Replace YOUR_ID with a Formspree form ID (formspree.io) — no backend needed.
-             Works without JS; JS just improves the feedback. -->
-        <form class="form" id="contact-form" action="https://formspree.io/f/YOUR_ID" method="POST" novalidate>
+        <!-- Replace YOUR_EMAIL@example.com (in both the action and data-mailto
+             attributes below) with the address messages should go to.
+             JS builds a nicer pre-filled mailto: link on submit; the form's
+             own action/enctype is the no-JS fallback. -->
+        <form class="form" id="contact-form" action="mailto:YOUR_EMAIL@example.com" method="post" enctype="text/plain" data-mailto="mailto:YOUR_EMAIL@example.com" novalidate>
           <div class="field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" autocomplete="name" required>
