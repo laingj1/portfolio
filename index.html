@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Justin Laing — Website Manager &amp; Communications</title>
-  <meta name="description" content="Portfolio of Justin Laing, website manager at Yale University. Experience, technical projects, skills, and contact.">
+  <meta name="description" content="Portfolio of Justin Laing, website manager at Yale University — technical lead on the It's Your Yale redesign and YaleSites 2.0. Experience, case study, skills, and contact.">
 
   <!-- Open Graph / social sharing -->
   <meta property="og:title" content="Justin Laing — Website Manager &amp; Communications">
-  <meta property="og:description" content="Website management, technical project leadership, and communications work.">
+  <meta property="og:description" content="Website management, technical project leadership, and communications work at Yale University.">
   <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,11 +30,12 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__menu" id="nav-menu">
-        <li><a href="#projects">Apps</a></li>
+        <li><a href="#work">Work</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="personal.html">Personal Projects</a></li>
       </ul>
     </nav>
   </header>
@@ -62,10 +63,10 @@
         <div class="hero__content">
           <p class="hero__kicker">— Introduction</p>
           <h1 class="hero__title">Website Manager &amp; Communications, at Yale University.</h1>
-          <p class="hero__lead">I manage a portfolio of university websites and lead technical upgrade projects — bridging communications, content, and web development. On the side, I build small apps with AI and redesign websites for small businesses.</p>
+          <p class="hero__lead">I manage a portfolio of 18 university websites and led the technical delivery of the It's Your Yale redesign — migrating thousands of pages in partnership with Yale ITS and vendor Four Kitchens, work later recognized platform-wide as YaleSites 2.0.</p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#about">My story <span aria-hidden="true">→</span></a>
-            <a class="btn btn--ghost" href="#projects">View my work</a>
+            <a class="btn btn--primary" href="#work">View the case study <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="#about">My story</a>
           </div>
         </div>
       </div>
@@ -91,6 +92,10 @@
               <span class="stat__label">Websites Managed.</span>
             </div>
             <div class="stat">
+              <span class="stat__value">1,000s</span>
+              <span class="stat__label">Pages Migrated.</span>
+            </div>
+            <div class="stat">
               <span class="stat__value">20+</span>
               <span class="stat__label">Contributors Coordinated.</span>
             </div>
@@ -108,12 +113,12 @@
           <div class="service-card service-card--accent">
             <svg class="service-card__icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 4v5"/></svg>
             <h3>Web Platform Management</h3>
-            <p>13+ university sites and over 20 content contrbitors managed.</p>
+            <p>18 university sites and over 20 content contributors managed.</p>
           </div>
           <div class="service-card">
             <svg class="service-card__icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4.5-4.5"/><circle cx="15" cy="9" r="6"/><path d="M13 9l1.5 1.5L17 7.5"/></svg>
             <h3>Technical Project Leadership</h3>
-            <p>Led a multi-site vendor migration of thousands of pages, on time and under budget.</p>
+            <p>Technical lead on the It's Your Yale redesign — thousands of pages migrated with Yale ITS and Four Kitchens. <a class="card__link" href="#work">View case study<span aria-hidden="true"> →</span></a></p>
           </div>
           <div class="service-card">
             <svg class="service-card__icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V6a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
@@ -124,72 +129,63 @@
       </div>
     </section>
 
-    <!-- Personal projects: AI-built apps -->
-    <section class="section portfolio" id="projects" aria-labelledby="projects-h">
+    <!-- Case study: It's Your Yale redesign / YaleSites 2.0 -->
+    <section class="section portfolio" id="work" aria-labelledby="work-h">
       <div class="container">
-        <p class="section__kicker">— Portfolio</p>
-        <h2 id="projects-h" class="section__title">Apps I've built with AI</h2>
-        <p class="section__intro">Side projects I designed and shipped for personal use, using AI as a pair programmer. These are separate from my professional work — built on my own time to solve real problems at home. Each note is honest about what the AI handled and what I directed and decided.</p>
+        <p class="section__kicker">— Case Study</p>
+        <h2 id="work-h" class="section__title">YaleSites 2.0 &amp; the It's Your Yale Redesign</h2>
+        <p class="section__intro">It's Your Yale is the university's flagship staff and faculty resource site — one of the 18 sites I manage, and by far the largest. In 2025 it went through a full redesign and platform migration, and I led the technical side of that work for the It's Your Yale team.</p>
 
-        <div class="cases">
-          <!-- Case study 1 -->
-          <article class="case">
-            <div class="case__media">
-              <img src="images/budget-app.png" alt="Screenshot of the weekly budget app showing category spending and a weekly summary." loading="lazy" width="640" height="400">
-            </div>
-            <div class="case__body">
-              <h3 class="case__title">Weekly Budget Tracker</h3>
-              <ul class="card__tags">
-                <li>React</li><li>LocalStorage</li><li>Charts</li>
-              </ul>
-              <p class="case__desc"><strong>Problem:</strong> I wanted a fast way to track spending by week without a subscription app or a spreadsheet I'd never open.</p>
-              <p class="case__desc"><strong>Approach:</strong> A single-page app that logs expenses, buckets them by category, and shows a weekly summary with a simple chart.</p>
-              <dl class="case__split">
-                <div>
-                  <dt>What I directed</dt>
-                  <dd>Data model, category logic, UX flow, edge cases (partial weeks, edits), and final review of every change.</dd>
-                </div>
-                <div>
-                  <dt>What AI handled</dt>
-                  <dd>Boilerplate components, chart wiring, and first-draft functions I then tested and refined.</dd>
-                </div>
-              </dl>
-              <p class="case__links">
-                <a class="btn btn--primary" href="#" rel="noopener">Live demo</a>
-                <a class="card__link" href="#">Write-up<span aria-hidden="true"> →</span></a>
-              </p>
-            </div>
-          </article>
-
-          <!-- Case study 2 -->
-          <article class="case">
-            <div class="case__media">
-              <img src="images/baby-app.png" alt="Screenshot of the baby tracking app showing feed, sleep, and diaper logs with timestamps." loading="lazy" width="640" height="400">
-            </div>
-            <div class="case__body">
-              <h3 class="case__title">Baby Tracker</h3>
-              <ul class="card__tags">
-                <li>React</li><li>PWA</li><li>Offline-first</li>
-              </ul>
-              <p class="case__desc"><strong>Problem:</strong> Getting ready for our first baby, my wife and I knew we'd need a shared source of truth. Feeds, sleep, and diaper changes are easy to lose track of at 3 a.m., and "when was the last feeding?" is a hard question to answer from memory. Once daycare entered the picture, the problem grew: we needed to compare what happened at home with what happened during the day to spot real patterns. Also again, we did not want yet another subscription.</p>
-              <p class="case__desc"><strong>Approach:</strong> An offline-first PWA with big tap targets, timestamped logs, and a daily view to spot patterns.</p>
-              <dl class="case__split">
-                <div>
-                  <dt>What I directed</dt>
-                  <dd>The whole interaction design for tired hands, offline data strategy, and privacy (everything stays on-device).</dd>
-                </div>
-                <div>
-                  <dt>What AI handled</dt>
-                  <dd>Service-worker setup, state management scaffolding, and repetitive UI code.</dd>
-                </div>
-              </dl>
-              <p class="case__links">
-                <a class="btn btn--primary" href="#" rel="noopener">Live demo</a>
-                <a class="card__link" href="#">Write-up<span aria-hidden="true"> →</span></a>
-              </p>
-            </div>
-          </article>
+        <div class="case-facts">
+          <div class="case-fact">
+            <span class="case-fact__label">Role</span>
+            <span class="case-fact__value">Technical Lead, It's Your Yale</span>
+          </div>
+          <div class="case-fact">
+            <span class="case-fact__label">Partners</span>
+            <span class="case-fact__value">Yale ITS &amp; Four Kitchens</span>
+          </div>
+          <div class="case-fact">
+            <span class="case-fact__label">Pages Migrated</span>
+            <span class="case-fact__value">Thousands</span>
+          </div>
+          <div class="case-fact">
+            <span class="case-fact__label">Redesign Launched</span>
+            <span class="case-fact__value">Aug 13, 2025</span>
+          </div>
         </div>
+
+        <div class="case-body">
+          <div>
+            <h3>The challenge</h3>
+            <p>It's Your Yale had outgrown its structure. Content was organized around org charts instead of what staff and faculty were actually trying to do, search was inconsistent, and accessibility gaps made some content hard to reach. Fixing that meant more than a redesign — it meant migrating thousands of pages onto a new content model without breaking the workflows the Yale community relies on every day.</p>
+            <h3>What I led</h3>
+            <ul class="tl__list">
+              <li>Represented the It's Your Yale team in requirements gathering and design reviews with Yale ITS and vendor partner Four Kitchens, translating staff and faculty feedback into technical requirements.</li>
+              <li>Served as technical lead working directly with Four Kitchens throughout the build, coordinating the migration of thousands of pages onto the new content model.</li>
+              <li>Communicated scope, progress, and risk to senior leadership and subject-matter stakeholders across university operations, finance, and benefits.</li>
+              <li>Designed and implemented a content governance process so the new services-first structure would stay accurate and consistent after launch.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>The outcome</h3>
+            <p>The redesigned It's Your Yale launched August 13, 2025, reframing content around services — like Getting Around Yale and Dining Around Campus — instead of org charts, and raising the site's accessibility score. It's Your Yale's contribution to the underlying platform was substantial enough that Yale ITS built much of it into a university-wide release they named <strong>YaleSites 2.0</strong> — new Content Collections navigation, flexible section layouts, and dozens of other improvements now available to every YaleSites site, not just ours.</p>
+
+            <blockquote class="case-quote">
+              <p>"Collaborating with YaleSites and Four Kitchens allowed us to upgrade the It's Your Yale website to support a wide range of content. Flexible layouts help us feature both service-related content and imagery in the Your Yale News section, while enhanced tagging improves content relationships and makes related information easier to find."</p>
+              <cite>— The It's Your Yale Team, YaleSites 2.0 announcement</cite>
+            </blockquote>
+
+            <blockquote class="case-quote">
+              <p>"Users visit It's Your Yale with specific objectives, such as obtaining support, accessing resources, or completing administrative tasks. The services will be organized into clear, user-focused categories."</p>
+              <cite>— Lisa Sawin, Senior Project Director for Operations Initiatives</cite>
+            </blockquote>
+          </div>
+        </div>
+
+        <p class="case-actions">
+          <a class="card__link" href="https://yalesites.yale.edu/announcements/2025-05-08-yalesites-v20-in-collaboration-with-its-your-yale" target="_blank" rel="noopener">Read the YaleSites 2.0 announcement<span aria-hidden="true"> ↗</span></a>
+        </p>
       </div>
     </section>
 
@@ -217,9 +213,9 @@
                 <svg class="tl__chevron" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
               </summary>
               <div class="tl__detail">
-                <p>Manage a portfolio of 13 university websites, including the flagship <em>It's Your Yale</em>, coordinating a network of 20+ content contributors to keep content accurate, consistent, and free of duplication.</p>
+                <p>Manage a portfolio of 18 university websites, including the flagship <em>It's Your Yale</em>, coordinating a network of 20+ content contributors to keep content accurate, consistent, and free of duplication.</p>
                 <ul class="tl__list">
-                  <li>Served as technical lead on a major web platform upgrade, partnering with an external vendor for the first time and delivering a multi-site migration of thousands of pages on time and under budget.</li>
+                  <li>Served as technical lead on the It's Your Yale redesign, partnering with Yale ITS and vendor Four Kitchens for the first time and delivering a migration of thousands of pages on time and under budget — work later recognized platform-wide as <a href="#work">YaleSites 2.0</a>.</li>
                   <li>Built and maintained an editorial and site style guide that standardized voice, tone, and presentation — work that grew into a campus-wide effort to scale content standards.</li>
                   <li>Supported an AI chatbot assistant (QA testing, launch, and ongoing accuracy) to reduce tier-zero support requests, and joined AI working groups shaping responsible AI practices in university communications.</li>
                   <li>Led analytics strategy through a platform transition: migrated to Google Analytics 4 and Google Tag Manager, and built self-service LookerStudio dashboards that let clients track their own content performance.</li>
@@ -385,8 +381,9 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer__grid">
       <p>© <span id="year"></span> Justin Laing. Built with plain HTML, CSS &amp; JS.</p>
+      <p><a href="personal.html">See my personal AI projects <span aria-hidden="true">→</span></a></p>
     </div>
   </footer>
 
