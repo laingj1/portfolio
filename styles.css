@@ -290,6 +290,20 @@ img { max-width: 100%; height: auto; }
 .card__link:hover { text-decoration: underline; }
 
 /* ---- Case study (work) ---- */
+.case-media {
+  margin: 2rem 0 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-panel);
+}
+.case-media img { display: block; width: 100%; height: auto; }
+.case-media figcaption {
+  padding: .6rem 1rem;
+  font-size: .8rem; color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
 .case-facts {
   display: grid; gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
