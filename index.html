@@ -11,6 +11,10 @@
   <meta property="og:description" content="Website management, technical project leadership, and communications work.">
   <meta property="og:type" content="website">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,7 +22,10 @@
 
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a class="nav__brand" href="#top">Justin Laing</a>
+      <a class="nav__brand" href="#top">
+        <span class="nav__mark" aria-hidden="true">JL</span>
+        Justin Laing
+      </a>
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -35,21 +42,93 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero" id="top">
+      <div class="hero__grid">
+        <div class="hero__visual">
+          <div class="hero__avatar" aria-hidden="true">JL</div>
+          <p class="hero__nameplate">Justin Laing<span class="hero__nameplate-accent">.</span></p>
+          <ul class="hero__iconlinks">
+            <li>
+              <a href="#contact" aria-label="Go to contact section">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M4 6l8 6 8-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="resume.pdf" download aria-label="Download résumé PDF">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="hero__content">
+          <p class="hero__kicker">— Introduction</p>
+          <h1 class="hero__title">Website Manager &amp; Communications, based at Yale University.</h1>
+          <p class="hero__lead">I manage a portfolio of university websites and lead technical upgrade projects — bridging communications, content, and web development. On the side, I build small apps with AI.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#about">My story <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="#projects">View my work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats / currently -->
+    <section class="stats" aria-labelledby="stats-h">
+      <div class="container stats__grid">
+        <div>
+          <p class="section__kicker">— Currently</p>
+          <h2 id="stats-h" class="stats__title">Open to technical&nbsp;lead &amp; platform roles.</h2>
+          <p class="stats__text">Deepening my platform and development skills while leading web projects at Yale. Always glad to talk shop.</p>
+          <a class="stats__link" href="#contact">Get in touch <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="stats__side">
+          <p class="stats__quote">Good websites don't feel designed — they feel obvious. That's the standard I hold every page to.</p>
+          <div class="stats__numbers">
+            <div class="stat">
+              <span class="stat__value">8+</span>
+              <span class="stat__label">Years Experience.</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">13</span>
+              <span class="stat__label">Websites Managed.</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">20+</span>
+              <span class="stat__label">Contributors Coordinated.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / what I do -->
+    <section class="services" aria-labelledby="services-h">
       <div class="container">
-        <p class="hero__eyebrow">Website Manager · Yale University</p>
-        <h1 class="hero__title">Hi, I'm Justin Laing.</h1>
-        <p class="hero__lead">I manage a portfolio of university websites and lead technical upgrade projects — bridging communications, content, and web development. On the side, I build small apps with AI.</p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#projects">View my work</a>
-          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        <p class="section__kicker">— What I Do</p>
+        <h2 id="services-h" class="section__title">Where content meets the platform.</h2>
+        <div class="service-cards">
+          <div class="service-card service-card--accent">
+            <svg class="service-card__icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 4v5"/></svg>
+            <h3>Web Platform Management</h3>
+            <p>13 university sites, one style guide, zero duplicated content.</p>
+          </div>
+          <div class="service-card">
+            <svg class="service-card__icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4.5-4.5"/><circle cx="15" cy="9" r="6"/><path d="M13 9l1.5 1.5L17 7.5"/></svg>
+            <h3>Technical Project Leadership</h3>
+            <p>Led a multi-site vendor migration of thousands of pages, on time and under budget.</p>
+          </div>
+          <div class="service-card">
+            <svg class="service-card__icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V6a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+            <h3>Communications &amp; Design</h3>
+            <p>Editorial style guides, analytics dashboards, and campus-wide content standards.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Personal projects: AI-built apps -->
-    <section class="section" id="projects" aria-labelledby="projects-h">
+    <section class="section portfolio" id="projects" aria-labelledby="projects-h">
       <div class="container">
-        <p class="section__kicker">Personal</p>
+        <p class="section__kicker">— Portfolio</p>
         <h2 id="projects-h" class="section__title">Apps I've built with AI</h2>
         <p class="section__intro">Side projects I designed and shipped for personal use, using AI as a pair programmer. These are separate from my professional work — built on my own time to solve real problems at home. Each note is honest about what the AI handled and what I directed and decided.</p>
 
@@ -119,7 +198,7 @@
     <section class="section section--alt" id="experience" aria-labelledby="experience-h">
       <div class="container">
         <div class="exp__head">
-          <p class="section__kicker">Professional</p>
+          <p class="section__kicker">— Professional</p>
           <h2 id="experience-h" class="section__title">Experience</h2>
           <a class="btn btn--ghost" href="resume.pdf" download>Download résumé (PDF)</a>
         </div>
@@ -214,8 +293,9 @@
     </section>
 
     <!-- About -->
-    <section class="section section--alt" id="about" aria-labelledby="about-h">
+    <section class="section" id="about" aria-labelledby="about-h">
       <div class="container about">
+        <p class="section__kicker">— My Story</p>
         <h2 id="about-h" class="section__title">About</h2>
         <p>I'm a website manager in Yale's Office of Public Affairs &amp; Communications, where I sit at the intersection of content and technical delivery — managing a portfolio of sites, leading upgrade projects, and helping communicators across campus do more with the web.</p>
         <p>I hold an MBA in Management from the University of Hartford and a B.S. in Public Health from Southern Connecticut State University. I care about clear communication, accessible design, and building things — whether that's a large university platform or a small app for my own family. I'm working toward a more technical lead role and actively deepening my platform and development skills.</p>
@@ -223,8 +303,9 @@
     </section>
 
     <!-- Skills -->
-    <section class="section" id="skills" aria-labelledby="skills-h">
+    <section class="section section--alt" id="skills" aria-labelledby="skills-h">
       <div class="container">
+        <p class="section__kicker">— Toolbox</p>
         <h2 id="skills-h" class="section__title">Skills &amp; Tools</h2>
         <div class="skillgroups">
           <div class="skillgroup">
@@ -270,10 +351,13 @@
     </section>
 
     <!-- Contact -->
-    <section class="section section--alt" id="contact" aria-labelledby="contact-h">
-      <div class="container container--narrow">
-        <h2 id="contact-h" class="section__title">Contact</h2>
-        <p>Have a project or role in mind? Send a message.</p>
+    <section class="section contact" id="contact" aria-labelledby="contact-h">
+      <div class="container contact__grid">
+        <div class="contact__intro">
+          <p class="section__kicker">— Contact</p>
+          <h2 id="contact-h" class="section__title">Any type of query &amp; discussion.</h2>
+          <p>Have a project or role in mind? Send a message and I'll get back to you.</p>
+        </div>
 
         <!-- Replace YOUR_ID with a Formspree form ID (formspree.io) — no backend needed.
              Works without JS; JS just improves the feedback. -->
