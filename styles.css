@@ -290,9 +290,17 @@ img { max-width: 100%; height: auto; }
 .card__link:hover { text-decoration: underline; }
 
 /* ---- Case study (work) ---- */
+.case-intro {
+  display: grid; gap: 1.75rem;
+  margin-bottom: 0;
+}
+@media (min-width: 780px) {
+  .case-intro { grid-template-columns: 1.1fr .9fr; align-items: start; gap: 2.5rem; }
+  .case-intro .section__intro { margin-bottom: 0; }
+}
+
 .case-media {
-  margin: 2rem 0 0;
-  max-width: 560px;
+  margin: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -308,7 +316,7 @@ img { max-width: 100%; height: auto; }
 .case-facts {
   display: grid; gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  margin: 2rem 0;
+  margin: 2.5rem 0 2rem;
 }
 .case-fact {
   background: var(--bg-panel-alt); border: 1px solid var(--border);
