@@ -292,6 +292,7 @@ img { max-width: 100%; height: auto; }
 /* ---- Case study (work) ---- */
 .case-media {
   margin: 2rem 0 0;
+  max-width: 560px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
