@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justin Laing — Personal Projects</title>
+  <meta name="description" content="Personal AI-assisted app projects by Justin Laing, built on his own time — separate from his professional work at Yale University.">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:title" content="Justin Laing — Personal Projects">
+  <meta property="og:description" content="Apps Justin Laing has built with AI as a pair programmer, on his own time.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#top">
+        <span class="nav__mark" aria-hidden="true">JL</span>
+        Justin Laing
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="index.html">Professional Portfolio</a></li>
+        <li><a href="#apps">Apps</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Intro -->
+    <section class="section" id="top">
+      <div class="container">
+        <p class="section__kicker">— Personal</p>
+        <h1 class="section__title">Apps I build with AI.</h1>
+        <p class="section__intro">Side projects, separate from my professional work at Yale — built on my own time, using AI as a pair programmer to solve real problems at home. Each write-up is honest about what the AI handled and what I directed and decided.</p>
+        <a class="btn btn--ghost" href="index.html">← Back to professional portfolio</a>
+      </div>
+    </section>
+
+    <!-- Personal projects: AI-built apps -->
+    <section class="section section--alt" id="apps" aria-labelledby="apps-h">
+      <div class="container">
+        <p class="section__kicker">— Projects</p>
+        <h2 id="apps-h" class="section__title">Apps I've built with AI</h2>
+
+        <div class="cases">
+          <!-- Case study 1 -->
+          <article class="case">
+            <div class="case__media">
+              <img src="images/budget-app.png" alt="Screenshot of the weekly budget app showing category spending and a weekly summary." loading="lazy" width="640" height="400">
+            </div>
+            <div class="case__body">
+              <h3 class="case__title">Weekly Budget Tracker</h3>
+              <ul class="card__tags">
+                <li>React</li><li>LocalStorage</li><li>Charts</li>
+              </ul>
+              <p class="case__desc"><strong>Problem:</strong> I wanted a fast way to track spending by week without a subscription app or a spreadsheet I'd never open.</p>
+              <p class="case__desc"><strong>Approach:</strong> A single-page app that logs expenses, buckets them by category, and shows a weekly summary with a simple chart.</p>
+              <dl class="case__split">
+                <div>
+                  <dt>What I directed</dt>
+                  <dd>Data model, category logic, UX flow, edge cases (partial weeks, edits), and final review of every change.</dd>
+                </div>
+                <div>
+                  <dt>What AI handled</dt>
+                  <dd>Boilerplate components, chart wiring, and first-draft functions I then tested and refined.</dd>
+                </div>
+              </dl>
+              <p class="case__links">
+                <a class="btn btn--primary" href="#" rel="noopener">Live demo</a>
+                <a class="card__link" href="#">Write-up<span aria-hidden="true"> →</span></a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Case study 2 -->
+          <article class="case">
+            <div class="case__media">
+              <img src="images/baby-app.png" alt="Screenshot of the baby tracking app showing feed, sleep, and diaper logs with timestamps." loading="lazy" width="640" height="400">
+            </div>
+            <div class="case__body">
+              <h3 class="case__title">Baby Tracker</h3>
+              <ul class="card__tags">
+                <li>React</li><li>PWA</li><li>Offline-first</li>
+              </ul>
+              <p class="case__desc"><strong>Problem:</strong> Getting ready for our first baby, my wife and I knew we'd need a shared source of truth. Feeds, sleep, and diaper changes are easy to lose track of at 3 a.m., and "when was the last feeding?" is a hard question to answer from memory. Once daycare entered the picture, the problem grew: we needed to compare what happened at home with what happened during the day to spot real patterns. Also again, we did not want yet another subscription.</p>
+              <p class="case__desc"><strong>Approach:</strong> An offline-first PWA with big tap targets, timestamped logs, and a daily view to spot patterns.</p>
+              <dl class="case__split">
+                <div>
+                  <dt>What I directed</dt>
+                  <dd>The whole interaction design for tired hands, offline data strategy, and privacy (everything stays on-device).</dd>
+                </div>
+                <div>
+                  <dt>What AI handled</dt>
+                  <dd>Service-worker setup, state management scaffolding, and repetitive UI code.</dd>
+                </div>
+              </dl>
+              <p class="case__links">
+                <a class="btn btn--primary" href="#" rel="noopener">Live demo</a>
+                <a class="card__link" href="#">Write-up<span aria-hidden="true"> →</span></a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Justin Laing. Built with plain HTML, CSS &amp; JS.</p>
+      <p><a href="index.html#contact">Have a project or role in mind? Get in touch <span aria-hidden="true">→</span></a></p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

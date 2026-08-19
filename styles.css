@@ -289,6 +289,40 @@ img { max-width: 100%; height: auto; }
 .card__link { font-weight: 600; text-decoration: none; }
 .card__link:hover { text-decoration: underline; }
 
+/* ---- Case study (work) ---- */
+.case-facts {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  margin: 2rem 0;
+}
+.case-fact {
+  background: var(--bg-panel-alt); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.1rem 1.25rem;
+}
+.case-fact__label {
+  display: block; text-transform: uppercase; letter-spacing: .06em;
+  font-size: .72rem; font-weight: 700; color: var(--accent); margin-bottom: .35rem;
+}
+.case-fact__value { display: block; font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; }
+
+.case-body { display: grid; gap: 2.5rem; margin-top: 2.5rem; }
+@media (min-width: 820px) {
+  .case-body { grid-template-columns: 1.1fr .9fr; align-items: start; }
+}
+.case-body h3 { font-size: 1.1rem; margin: 1.5rem 0 .6rem; }
+.case-body h3:first-child { margin-top: 0; }
+.case-body p { color: var(--muted); }
+.case-body ul.tl__list { color: var(--muted); }
+
+.case-quote {
+  border-left: 3px solid var(--accent); margin: 1.5rem 0 0;
+  padding: .2rem 0 .2rem 1.25rem;
+}
+.case-quote p { font-family: var(--font-head); font-weight: 600; font-size: 1.05rem; color: var(--text); margin-bottom: .4rem; }
+.case-quote cite { font-style: normal; color: var(--muted); font-size: .85rem; }
+
+.case-actions { margin-top: 2rem; }
+
 /* ---- About ---- */
 .about { max-width: 68ch; }
 .about p { color: var(--muted); }
@@ -336,6 +370,11 @@ img { max-width: 100%; height: auto; }
   padding: 2rem 0; color: var(--muted); font-size: .9rem;
   background: var(--bg-alt);
 }
+.footer__grid {
+  display: flex; flex-wrap: wrap; gap: .5rem 1.5rem;
+  align-items: center; justify-content: space-between;
+}
+.footer__grid p { margin: 0; }
 
 /* ---- Experience head ---- */
 .exp__head {
