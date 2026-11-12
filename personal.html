@@ -55,61 +55,55 @@
         <h2 id="apps-h" class="section__title">Apps I've built with AI</h2>
 
         <div class="cases">
-          <!-- Case study 1 -->
+          <!-- Case study 1: WeekSpend -->
           <article class="case">
             <div class="case__media">
-              <img src="images/budget-app.png" alt="Screenshot of the weekly budget app showing category spending and a weekly summary." loading="lazy" width="640" height="400">
+              <img src="images/weekspend-login.png" alt="The WeekSpend sign-in screen: a blue app icon, the WeekSpend wordmark, the tagline 'Know where your week went,' and email/password fields." loading="lazy" width="780" height="720">
             </div>
             <div class="case__body">
-              <h3 class="case__title">Weekly Budget Tracker</h3>
+              <h3 class="case__title">WeekSpend</h3>
               <ul class="card__tags">
-                <li>React</li><li>LocalStorage</li><li>Charts</li>
+                <li>React</li><li>Cloudflare Pages</li><li>D1</li><li>Plaid</li>
               </ul>
-              <p class="case__desc"><strong>Problem:</strong> I wanted a fast way to track spending by week without a subscription app or a spreadsheet I'd never open.</p>
-              <p class="case__desc"><strong>Approach:</strong> A single-page app that logs expenses, buckets them by category, and shows a weekly summary with a simple chart.</p>
+              <p class="case__desc"><strong>Problem:</strong> I wanted a fast way to track spending by week without a subscription budgeting app or a spreadsheet I'd never open, and I wanted it to pull in real transactions instead of manual entry.</p>
+              <p class="case__desc"><strong>Approach:</strong> A React app on Cloudflare Pages, with a Pages Functions API and a Cloudflare D1 database, and Plaid to sync bank transactions so they can be categorized automatically against a weekly budget.</p>
               <dl class="case__split">
                 <div>
                   <dt>What I directed</dt>
-                  <dd>Data model, category logic, UX flow, edge cases (partial weeks, edits), and final review of every change.</dd>
+                  <dd>The budget-item data model, the invite-only account system and JWT-based auth, the transaction-categorization rules, and the Cloudflare deployment (Pages, Pages Functions, D1).</dd>
                 </div>
                 <div>
                   <dt>What AI handled</dt>
-                  <dd>Boilerplate components, chart wiring, and first-draft functions I then tested and refined.</dd>
+                  <dd>Boilerplate React components, the first draft of the Plaid integration, and repetitive API route scaffolding, all of which I tested and reviewed.</dd>
                 </div>
               </dl>
-              <p class="case__links">
-                <a class="btn btn--primary" href="#" rel="noopener">Live demo</a>
-                <a class="card__link" href="#">Write-up<span aria-hidden="true"> →</span></a>
-              </p>
+              <p class="case__desc"><strong>Status:</strong> Live and in daily use, invite-only (no public sign-up).</p>
             </div>
           </article>
 
-          <!-- Case study 2 -->
+          <!-- Case study 2: Wren & Clover -->
           <article class="case">
             <div class="case__media">
-              <img src="images/baby-app.png" alt="Screenshot of the baby tracking app showing feed, sleep, and diaper logs with timestamps." loading="lazy" width="640" height="400">
+              <img src="images/wren-and-clover-icon.png" alt="The Wren &amp; Clover app icon: a white heart-shaped clover mark on a coral gradient background." loading="lazy" width="700" height="700">
             </div>
             <div class="case__body">
-              <h3 class="case__title">Baby Tracker</h3>
+              <h3 class="case__title">Wren &amp; Clover</h3>
               <ul class="card__tags">
-                <li>React</li><li>PWA</li><li>Offline-first</li>
+                <li>React Native (Expo)</li><li>Fastify</li><li>PostgreSQL</li>
               </ul>
-              <p class="case__desc"><strong>Problem:</strong> Getting ready for our first baby, my wife and I knew we'd need a shared source of truth. Feeds, sleep, and diaper changes are easy to lose track of at 3 a.m., and "when was the last feeding?" is a hard question to answer from memory. Once daycare entered the picture, the problem grew: we needed to compare what happened at home with what happened during the day to spot real patterns. Also again, we did not want yet another subscription.</p>
-              <p class="case__desc"><strong>Approach:</strong> An offline-first PWA with big tap targets, timestamped logs, and a daily view to spot patterns.</p>
+              <p class="case__desc"><strong>Problem:</strong> Getting ready for our first baby, my wife and I knew we'd need a shared, accurate record of feeds, sleep, and diaper changes. "When was the last feeding?" is a hard question to answer from memory at 3 a.m., and once daycare entered the picture, we needed to compare what happened at home with what happened during the day. We didn't want yet another subscription, and we wanted both of us to see the same thing at the same time.</p>
+              <p class="case__desc"><strong>Approach:</strong> A React Native (Expo) app backed by a Fastify API, with live feed, sleep, and pump timers that live on the server, so both caregivers always see the same state and a timer survives the app being closed. Optional AI-written insights sit on top of a rule-based rhythm model, not raw AI guesses.</p>
               <dl class="case__split">
                 <div>
                   <dt>What I directed</dt>
-                  <dd>The whole interaction design for tired hands, offline data strategy, and privacy (everything stays on-device).</dd>
+                  <dd>The timer-on-server architecture, the rhythm algorithm that suggests what's likely next from the baby's own recent data, the auth design (hashed passwords, rotating refresh tokens with reuse detection), and the guardrails around AI insights (schema-checked, screened for medical language, cached by input).</dd>
                 </div>
                 <div>
                   <dt>What AI handled</dt>
-                  <dd>Service-worker setup, state management scaffolding, and repetitive UI code.</dd>
+                  <dd>Boilerplate scaffolding, first-draft route handlers and UI components, and repetitive test setup, all reviewed and tested.</dd>
                 </div>
               </dl>
-              <p class="case__links">
-                <a class="btn btn--primary" href="#" rel="noopener">Live demo</a>
-                <a class="card__link" href="#">Write-up<span aria-hidden="true"> →</span></a>
-              </p>
+              <p class="case__desc"><strong>Status:</strong> In active development as a mobile app; not yet released.</p>
             </div>
           </article>
         </div>
