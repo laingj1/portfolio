@@ -67,6 +67,7 @@
               </ul>
               <p class="case__desc"><strong>Problem:</strong> I wanted a fast way to track spending by week without a subscription budgeting app or a spreadsheet I'd never open, and I wanted it to pull in real transactions instead of manual entry.</p>
               <p class="case__desc"><strong>Approach:</strong> A React app on Cloudflare Pages, with a Pages Functions API and a Cloudflare D1 database, and Plaid to sync bank transactions so they can be categorized automatically against a weekly budget.</p>
+              <p class="case__desc"><strong>Workflow:</strong> Every change starts as a GitHub branch. Cloudflare Pages builds a preview ("multidev") deployment for each one, so I can review and test a change live before merging to the branch that powers production.</p>
               <dl class="case__split">
                 <div>
                   <dt>What I directed</dt>
