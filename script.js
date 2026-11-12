@@ -35,7 +35,7 @@ if (form) {
     const message = form.message.value.trim();
 
     const subject = `Portfolio contact from ${name}`;
-    const body = `${message}\n\n— ${name} (${email})`;
+    const body = `${message}\n\nFrom: ${name} (${email})`;
     const mailto = `${form.dataset.mailto}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailto;
