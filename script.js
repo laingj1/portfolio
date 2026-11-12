@@ -45,54 +45,63 @@ if (form) {
   });
 }
 
-// Screenshot lightbox: a "View screenshots" button opens a <dialog> carousel
-// built from a hidden set of <img> tags kept next to each project card.
-// Guarded because not every page has a lightbox or gallery buttons.
-const lightbox = document.getElementById('lightbox');
-const galleryButtons = document.querySelectorAll('.case__gallery-btn');
+// In-place project screenshot carousel: a "View screenshots" button swaps
+// the card's main image (brand art) for a flippable set of real screenshots,
+// kept as a hidden set of <img> tags next to each card. No modal — the
+// carousel plays out where the main image already is.
+document.querySelectorAll('.case__gallery-btn').forEach((btn) => {
+  const media = btn.closest('.case__media');
+  const img = media.querySelector('.case__media-img');
+  const prevBtn = media.querySelector('.case__nav--prev');
+  const nextBtn = media.querySelector('.case__nav--next');
+  const counter = media.querySelector('.case__counter');
+  const label = btn.querySelector('.case__gallery-btn-label');
+  const data = document.getElementById(btn.dataset.galleryTarget);
 
-if (lightbox && galleryButtons.length) {
-  const lightboxImg = lightbox.querySelector('.lightbox__img');
-  const counter = lightbox.querySelector('.lightbox__counter');
-  const prevBtn = lightbox.querySelector('.lightbox__nav--prev');
-  const nextBtn = lightbox.querySelector('.lightbox__nav--next');
-  const closeBtn = lightbox.querySelector('.lightbox__close');
+  const brandSrc = img.getAttribute('src');
+  const brandAlt = img.getAttribute('alt');
+  const shots = Array.from(data.querySelectorAll('img')).map((shot) => ({
+    src: shot.getAttribute('src'),
+    alt: shot.getAttribute('alt'),
+  }));
 
-  let images = [];
+  let active = false;
   let index = 0;
 
-  function render() {
-    const item = images[index];
-    lightboxImg.src = item.src;
-    lightboxImg.alt = item.alt;
-    counter.textContent = `${index + 1} / ${images.length}`;
+  function renderShot() {
+    const shot = shots[index];
+    img.src = shot.src;
+    img.alt = shot.alt;
+    counter.textContent = `${index + 1} / ${shots.length}`;
   }
 
-  galleryButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const data = document.getElementById(btn.dataset.galleryTarget);
-      images = Array.from(data.querySelectorAll('img')).map((img) => ({
-        src: img.getAttribute('src'),
-        alt: img.getAttribute('alt'),
-      }));
-      index = 0;
-      render();
-      lightbox.showModal();
-    });
-  });
+  function enterGallery() {
+    active = true;
+    index = 0;
+    renderShot();
+    prevBtn.hidden = false;
+    nextBtn.hidden = false;
+    counter.hidden = false;
+    label.textContent = 'Back to overview';
+  }
 
+  function exitGallery() {
+    active = false;
+    img.src = brandSrc;
+    img.alt = brandAlt;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    counter.hidden = true;
+    label.textContent = `View ${shots.length} screenshots`;
+  }
+
+  btn.addEventListener('click', () => (active ? exitGallery() : enterGallery()));
   prevBtn.addEventListener('click', () => {
-    index = (index - 1 + images.length) % images.length;
-    render();
+    index = (index - 1 + shots.length) % shots.length;
+    renderShot();
   });
   nextBtn.addEventListener('click', () => {
-    index = (index + 1) % images.length;
-    render();
+    index = (index + 1) % shots.length;
+    renderShot();
   });
-  closeBtn.addEventListener('click', () => lightbox.close());
-
-  // Click outside the card (on the backdrop) closes it.
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) lightbox.close();
-  });
-}
+});
