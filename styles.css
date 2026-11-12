@@ -249,6 +249,9 @@ img { max-width: 100%; height: auto; }
 /* ---- Project / portfolio cards ---- */
 .portfolio { background: var(--bg-alt); }
 .cases { display: grid; gap: 2rem; }
+@media (min-width: 860px) {
+  .cases { grid-template-columns: repeat(2, 1fr); align-items: start; }
+}
 .case {
   display: grid; gap: 1.5rem;
   grid-template-columns: 1fr;
@@ -257,10 +260,7 @@ img { max-width: 100%; height: auto; }
   transition: border-color .15s;
 }
 .case:hover { border-color: var(--accent); }
-@media (min-width: 720px) {
-  .case { grid-template-columns: minmax(0, 45%) 1fr; align-items: stretch; }
-}
-.case__media { background: var(--bg-panel); position: relative; align-self: start; }
+.case__media { background: var(--bg-panel); position: relative; }
 .case__media img { display: block; width: 100%; height: auto; }
 .case__gallery-btn {
   position: absolute; right: 1rem; bottom: 1rem;
