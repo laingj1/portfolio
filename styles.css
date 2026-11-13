@@ -210,10 +210,15 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ---- Hero ----
-   Full-bleed two-panel layout: a dark color-block panel carries the
-   introduction and actions, paired with an abstract graphic panel
-   (standing in for a portrait) rather than a small card-style visual. */
-.hero { display: grid; grid-template-columns: 1fr; }
+   Two-panel layout, boxed to the same width as the rest of the site's
+   sections: a dark color-block panel carries the introduction and
+   actions, paired with an abstract graphic panel (standing in for a
+   portrait) rather than a small card-style visual. */
+.hero {
+  display: grid; grid-template-columns: 1fr;
+  width: min(100% - 2.5rem, var(--max)); margin: var(--space) auto 0;
+  border-radius: var(--radius); overflow: hidden;
+}
 @media (min-width: 860px) {
   .hero { grid-template-columns: minmax(0, 46%) 1fr; min-height: min(82vh, 660px); }
 }
