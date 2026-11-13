@@ -1,32 +1,28 @@
 /* ---- Design tokens ----
-   Light (default) is a frosted-glass theme: translucent panels over a
-   soft gradient backdrop. Dark keeps the original solid-panel look. */
+   A neutral tan / off-white / grey palette in both themes, with brown
+   reserved for text-weight accents (kickers, links, small icons) while
+   buttons and fills use the lighter tan. Flat surfaces throughout --
+   no tinted gradient backdrop or glass blur. */
 :root {
-  --bg: #eef1f8;
-  --bg-panel: rgba(255, 255, 255, 0.55);
-  --bg-panel-alt: rgba(255, 255, 255, 0.45);
-  --bg-alt: rgba(255, 255, 255, 0.3);
-  --text: #20232f;
-  --muted: #5b6275;
-  --accent: #f2b134;
-  --accent-dark: #d99a1f;
-  --accent-text: #c2860f;
-  --accent-ink: #2a2110;
-  --border: rgba(32, 35, 47, 0.12);
-  --panel-blur: blur(20px);
-  --glass-shadow: 0 8px 30px rgba(31, 41, 66, 0.1);
+  --bg: #f5f4f0;
+  --bg-panel: #ffffff;
+  --bg-panel-alt: #faf9f5;
+  --bg-alt: #ece9e2;
+  --text: #2a2b2e;
+  --muted: #6b6d72;
+  --accent: #a9875d;
+  --accent-dark: #8f6f49;
+  --accent-text: #6b4423;
+  --accent-ink: #faf6ef;
+  --border: rgba(42, 43, 46, 0.14);
   --status-error: #b42318;
   --status-success: #1b7a43;
-  --nav-menu-bg: #fbfbfe;
-  --hero-text: #20232f;
-  --hero-text-muted: rgba(32, 35, 47, .68);
-  --hero-shape-secondary: #5b7cfa;
-  --hero-border: rgba(32, 35, 47, .14);
-  --bg-image:
-    radial-gradient(ellipse 60% 50% at 12% 8%, color-mix(in srgb, var(--accent) 22%, transparent), transparent),
-    radial-gradient(ellipse 55% 45% at 90% 12%, rgba(99, 140, 255, 0.22), transparent),
-    radial-gradient(ellipse 60% 55% at 15% 95%, rgba(99, 140, 255, 0.16), transparent),
-    radial-gradient(ellipse 55% 50% at 95% 92%, color-mix(in srgb, var(--accent) 16%, transparent), transparent);
+  --nav-menu-bg: #faf9f5;
+  --hero-text: #2a2b2e;
+  --hero-text-muted: rgba(42, 43, 46, .68);
+  --hero-shape-secondary: #6b4423;
+  --hero-border: rgba(42, 43, 46, .14);
+  --bg-image: none;
   --radius: 14px;
   --max: 1160px;
   --space: clamp(3rem, 6vw, 5.5rem);
@@ -36,23 +32,24 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #23252f;
-  --bg-panel: #34374a;
-  --bg-panel-alt: #2b2e3d;
-  --bg-alt: #1c1e27;
-  --text: #f2f3f7;
-  --muted: #a6acbb;
+  --bg: #201e1b;
+  --bg-panel: #2b2824;
+  --bg-panel-alt: #332f2a;
+  --bg-alt: #171614;
+  --text: #efece6;
+  --muted: #a7a196;
+  --accent: #c9a06c;
+  --accent-dark: #b88c57;
   --accent-text: var(--accent);
+  --accent-ink: #2a1a0d;
   --border: rgba(255, 255, 255, 0.09);
-  --panel-blur: none;
-  --glass-shadow: none;
   --status-error: #ff7a6b;
   --status-success: #6fd394;
   --nav-menu-bg: var(--bg);
-  --hero-text: #f4f1ea;
-  --hero-text-muted: rgba(244, 241, 234, .74);
-  --hero-shape-secondary: rgba(99, 140, 255, .8);
-  --hero-border: rgba(244, 241, 234, .25);
+  --hero-text: #efece6;
+  --hero-text-muted: rgba(239, 236, 230, .72);
+  --hero-shape-secondary: #a8805a;
+  --hero-border: rgba(239, 236, 230, .25);
   --bg-image: none;
 }
 
@@ -71,26 +68,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
   -webkit-font-smoothing: antialiased;
-}
-
-/* ---- Glass surfaces ----
-   Every panel-like surface below shares the same translucent background
-   tokens (--bg-panel / --bg-panel-alt), so this adds the frosted-glass
-   blur and lift once. --panel-blur/--glass-shadow collapse to none in
-   dark mode, leaving the original solid-panel look untouched there. */
-.service-card,
-.case,
-.case__media,
-.case-media,
-.case-fact,
-.card__tags li,
-.skills li,
-.field input,
-.field textarea,
-.tl__item {
-  backdrop-filter: var(--panel-blur);
-  -webkit-backdrop-filter: var(--panel-blur);
-  box-shadow: var(--glass-shadow);
 }
 
 h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; margin: 0 0 0.5em; font-weight: 700; }
@@ -180,8 +157,6 @@ img { max-width: 100%; height: auto; }
     background: var(--nav-menu-bg); border-bottom: 1px solid var(--border);
     padding: .5rem 1.25rem 1rem;
     display: none;
-    backdrop-filter: var(--panel-blur);
-    -webkit-backdrop-filter: var(--panel-blur);
   }
   .nav__menu.is-open { display: flex; }
   .nav__menu li { padding: .5rem 0; }
