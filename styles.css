@@ -17,10 +17,8 @@
   --status-error: #b42318;
   --status-success: #1b7a43;
   --nav-menu-bg: #fbfbfe;
-  --hero-panel-bg: linear-gradient(155deg, #f8f9fc 0%, #eef0f6 55%, #e4e7ef 100%);
   --hero-text: #20232f;
   --hero-text-muted: rgba(32, 35, 47, .68);
-  --hero-graphic-bg: #eef0f5;
   --hero-shape-secondary: #5b7cfa;
   --hero-border: rgba(32, 35, 47, .14);
   --bg-image:
@@ -51,10 +49,8 @@
   --status-error: #ff7a6b;
   --status-success: #6fd394;
   --nav-menu-bg: var(--bg);
-  --hero-panel-bg: linear-gradient(155deg, #2b2f44 0%, #1a1c27 55%, #15161d 100%);
   --hero-text: #f4f1ea;
   --hero-text-muted: rgba(244, 241, 234, .74);
-  --hero-graphic-bg: #1a1c27;
   --hero-shape-secondary: rgba(99, 140, 255, .8);
   --hero-border: rgba(244, 241, 234, .25);
   --bg-image: none;
@@ -210,14 +206,12 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ---- Hero ----
-   Two-panel layout, boxed to the same width as the rest of the site's
-   sections: a dark color-block panel carries the introduction and
-   actions, paired with an abstract graphic panel (standing in for a
-   portrait) rather than a small card-style visual. */
+   Two-panel layout, the same width as the rest of the site's sections,
+   with no panel background of its own: it bleeds into the page
+   background rather than reading as a boxed card. */
 .hero {
   display: grid; grid-template-columns: 1fr;
   width: min(100% - 2.5rem, var(--max)); margin: var(--space) auto 0;
-  border-radius: var(--radius); overflow: hidden;
 }
 @media (min-width: 860px) {
   .hero { grid-template-columns: minmax(0, 46%) 1fr; min-height: min(82vh, 660px); }
@@ -225,7 +219,6 @@ img { max-width: 100%; height: auto; }
 
 .hero__panel--content {
   position: relative;
-  background: var(--hero-panel-bg);
   color: var(--hero-text);
   padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 4rem) clamp(5rem, 9vw, 6.5rem);
   display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
@@ -268,7 +261,6 @@ img { max-width: 100%; height: auto; }
 .hero__panel--graphic {
   position: relative; overflow: hidden; min-height: 420px;
   display: flex; align-items: center; justify-content: center;
-  background: var(--hero-graphic-bg);
 }
 .hero__shape { position: absolute; pointer-events: none; }
 .hero__shape--circle-lg {
