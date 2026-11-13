@@ -252,13 +252,22 @@ img { max-width: 100%; height: auto; }
   display: flex; align-items: flex-end; justify-content: center;
   background-color: #1a1c27;
   background-image:
+    /* concentric rings, centered behind where he stands */
+    radial-gradient(circle at 50% 68%, transparent 23%, rgba(255, 255, 255, .14) 23.4%, rgba(255, 255, 255, .14) 23.8%, transparent 24.2%),
+    radial-gradient(circle at 50% 68%, transparent 34%, color-mix(in srgb, var(--accent) 45%, transparent) 34.4%, color-mix(in srgb, var(--accent) 45%, transparent) 34.9%, transparent 35.3%),
+    radial-gradient(circle at 50% 68%, transparent 46%, rgba(255, 255, 255, .09) 46.4%, rgba(255, 255, 255, .09) 46.8%, transparent 47.2%),
+    /* dotted grid texture */
     radial-gradient(circle, rgba(255, 255, 255, .12) 1.5px, transparent 1.5px),
+    /* color blobs */
+    radial-gradient(ellipse 55% 48% at 50% 62%, color-mix(in srgb, var(--accent) 45%, transparent), transparent 65%),
+    radial-gradient(ellipse 45% 40% at 10% 90%, rgba(99, 140, 255, .28), transparent 62%),
+    radial-gradient(ellipse 38% 34% at 92% 10%, color-mix(in srgb, var(--accent) 25%, transparent), transparent 65%),
     linear-gradient(155deg, #2b2f44 0%, #1a1c27 55%, #2c2013 100%);
-  background-size: 28px 28px, auto;
+  background-size: auto, auto, auto, 28px 28px, auto, auto, auto, auto;
 }
 .hero__cutout {
   position: relative;
-  height: 94%; width: auto; max-width: 90%;
+  height: 62%; width: auto; max-width: 78%;
   object-fit: contain;
 }
 
