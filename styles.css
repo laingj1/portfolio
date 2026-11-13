@@ -91,8 +91,7 @@ body {
 .skills li,
 .field input,
 .field textarea,
-.tl__item,
-.nav__menu {
+.tl__item {
   backdrop-filter: var(--panel-blur);
   -webkit-backdrop-filter: var(--panel-blur);
   box-shadow: var(--glass-shadow);
@@ -185,6 +184,9 @@ img { max-width: 100%; height: auto; }
     background: var(--nav-menu-bg); border-bottom: 1px solid var(--border);
     padding: .5rem 1.25rem 1rem;
     display: none;
+    backdrop-filter: var(--panel-blur);
+    -webkit-backdrop-filter: var(--panel-blur);
+    box-shadow: var(--glass-shadow);
   }
   .nav__menu.is-open { display: flex; }
   .nav__menu li { padding: .5rem 0; }
@@ -355,6 +357,24 @@ img { max-width: 100%; height: auto; }
 .service-card h3 { font-size: 1.15rem; margin: 1.25rem 0 .5rem; }
 .service-card p { color: var(--muted); margin: 0; font-size: .95rem; }
 .service-card__icon { color: var(--accent); }
+
+/* ---- Personal projects teaser ---- */
+.teaser-cards {
+  display: grid; gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin: 2rem 0 1.75rem;
+}
+.teaser-card {
+  display: block; text-decoration: none; color: var(--text);
+  background: var(--bg-panel-alt); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  transition: border-color .15s, transform .15s;
+}
+.teaser-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.teaser-card img { display: block; width: 100%; height: auto; aspect-ratio: 840 / 780; object-fit: cover; }
+.teaser-card__body { display: block; padding: 1.25rem 1.5rem; }
+.teaser-card__title { display: block; font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; margin-bottom: .35rem; }
+.teaser-card__desc { display: block; color: var(--muted); font-size: .9rem; }
 
 /* ---- Project / portfolio cards ---- */
 .portfolio { background: var(--bg-alt); }
