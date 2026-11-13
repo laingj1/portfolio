@@ -8,8 +8,8 @@
   --bg-alt: rgba(255, 255, 255, 0.3);
   --text: #20232f;
   --muted: #5b6275;
-  --accent: #c2860f;
-  --accent-dark: #a06f0c;
+  --accent: #f2b134;
+  --accent-dark: #d99a1f;
   --accent-ink: #2a2110;
   --border: rgba(32, 35, 47, 0.12);
   --panel-blur: blur(20px);
@@ -41,8 +41,6 @@
   --bg-alt: #1c1e27;
   --text: #f2f3f7;
   --muted: #a6acbb;
-  --accent: #f2b134;
-  --accent-dark: #d99a1f;
   --border: rgba(255, 255, 255, 0.09);
   --panel-blur: none;
   --glass-shadow: none;
