@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
     // Applied before the stylesheet renders, so a returning visitor's
-    // chosen theme never flashes the other one on load.
+    // chosen theme never flashes the other one on load. Dark is the
+    // default for first-time visitors; light is opt-in and remembered.
     try {
-      if (localStorage.getItem('theme') === 'dark') {
+      if (localStorage.getItem('theme') !== 'light') {
         document.documentElement.setAttribute('data-theme', 'dark');
       }
     } catch (e) {}
