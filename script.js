@@ -49,7 +49,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // off to the visitor's email app. No backend or third-party form service
 // needed. If JS is off, the form's own mailto action/enctype (see
 // index.html) still opens a blank pre-addressed email as a fallback.
-// Guarded because not every page (e.g. personal.html) has this form.
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
