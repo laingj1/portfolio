@@ -106,6 +106,7 @@ document.querySelectorAll('.case__gallery-btn').forEach((btn) => {
     active = true;
     index = 0;
     renderShot();
+    media.classList.add('case__media--gallery');
     prevBtn.hidden = false;
     nextBtn.hidden = false;
     counter.hidden = false;
@@ -116,6 +117,7 @@ document.querySelectorAll('.case__gallery-btn').forEach((btn) => {
     active = false;
     img.src = brandSrc;
     img.alt = brandAlt;
+    media.classList.remove('case__media--gallery');
     prevBtn.hidden = true;
     nextBtn.hidden = true;
     counter.hidden = true;
