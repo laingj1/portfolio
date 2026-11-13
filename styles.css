@@ -260,13 +260,6 @@ img { max-width: 100%; height: auto; }
     linear-gradient(160deg, #1a1c27, #2c2013);
   background-size: 28px 28px, auto, auto, auto;
 }
-.hero__monogram {
-  position: absolute; inset: 0; display: grid; place-items: center;
-  font-family: var(--font-head); font-weight: 800;
-  font-size: clamp(7rem, 20vw, 15rem);
-  letter-spacing: -.04em;
-  color: rgba(255, 255, 255, .07);
-}
 
 /* ---- Sections (general) ---- */
 .section { padding: var(--space) 0; }
