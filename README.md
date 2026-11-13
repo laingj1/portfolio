@@ -1,6 +1,6 @@
 # Justin Laing — Portfolio
 
-A static portfolio site (plain HTML, CSS, and JavaScript — no build step, no framework).
+A static portfolio site (plain HTML, CSS, and JavaScript — no build step, no framework). No server-side functions are used; the site is static assets only.
 
 ## Files
 
