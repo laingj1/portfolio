@@ -1,5 +1,36 @@
-/* ---- Design tokens ---- */
+/* ---- Design tokens ----
+   Light (default) is a frosted-glass theme: translucent panels over a
+   soft gradient backdrop. Dark keeps the original solid-panel look. */
 :root {
+  --bg: #eef1f8;
+  --bg-panel: rgba(255, 255, 255, 0.55);
+  --bg-panel-alt: rgba(255, 255, 255, 0.45);
+  --bg-alt: rgba(255, 255, 255, 0.3);
+  --text: #20232f;
+  --muted: #5b6275;
+  --accent: #c2860f;
+  --accent-dark: #a06f0c;
+  --accent-ink: #2a2110;
+  --border: rgba(32, 35, 47, 0.12);
+  --panel-blur: blur(20px);
+  --glass-shadow: 0 8px 30px rgba(31, 41, 66, 0.1);
+  --status-error: #b42318;
+  --status-success: #1b7a43;
+  --nav-menu-bg: #fbfbfe;
+  --bg-image:
+    radial-gradient(ellipse 60% 50% at 12% 8%, color-mix(in srgb, var(--accent) 22%, transparent), transparent),
+    radial-gradient(ellipse 55% 45% at 90% 12%, rgba(99, 140, 255, 0.22), transparent),
+    radial-gradient(ellipse 60% 55% at 15% 95%, rgba(99, 140, 255, 0.16), transparent),
+    radial-gradient(ellipse 55% 50% at 95% 92%, color-mix(in srgb, var(--accent) 16%, transparent), transparent);
+  --radius: 14px;
+  --max: 1160px;
+  --space: clamp(3rem, 6vw, 5.5rem);
+  --font-head: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-synthesis: none;
+}
+
+:root[data-theme="dark"] {
   --bg: #23252f;
   --bg-panel: #34374a;
   --bg-panel-alt: #2b2e3d;
@@ -8,14 +39,13 @@
   --muted: #a6acbb;
   --accent: #f2b134;
   --accent-dark: #d99a1f;
-  --accent-ink: #2a2110;
   --border: rgba(255, 255, 255, 0.09);
-  --radius: 14px;
-  --max: 1160px;
-  --space: clamp(3rem, 6vw, 5.5rem);
-  --font-head: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-synthesis: none;
+  --panel-blur: none;
+  --glass-shadow: none;
+  --status-error: #ff7a6b;
+  --status-success: #6fd394;
+  --nav-menu-bg: var(--bg);
+  --bg-image: none;
 }
 
 /* ---- Reset / base ---- */
@@ -28,8 +58,33 @@ body {
   font-family: var(--font-body);
   line-height: 1.65;
   color: var(--text);
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-attachment: fixed;
+  background-size: cover;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Glass surfaces ----
+   Every panel-like surface below shares the same translucent background
+   tokens (--bg-panel / --bg-panel-alt), so this adds the frosted-glass
+   blur and lift once. --panel-blur/--glass-shadow collapse to none in
+   dark mode, leaving the original solid-panel look untouched there. */
+.hero__visual,
+.service-card,
+.case,
+.case__media,
+.case-media,
+.case-fact,
+.card__tags li,
+.skills li,
+.field input,
+.field textarea,
+.tl__item,
+.nav__menu {
+  backdrop-filter: var(--panel-blur);
+  -webkit-backdrop-filter: var(--panel-blur);
+  box-shadow: var(--glass-shadow);
 }
 
 h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; margin: 0 0 0.5em; font-weight: 700; }
@@ -88,6 +143,21 @@ img { max-width: 100%; height: auto; }
 .nav__menu a { text-decoration: none; color: var(--muted); font-weight: 500; }
 .nav__menu a:hover { color: var(--accent); }
 
+.nav__right { display: flex; align-items: center; gap: 1.25rem; }
+
+/* ---- Theme toggle ---- */
+.theme-toggle {
+  display: grid; place-items: center;
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg-panel-alt);
+  color: var(--text); cursor: pointer; padding: 0;
+  transition: border-color .15s, color .15s;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle__icon--moon { display: none; }
+:root[data-theme="dark"] .theme-toggle__icon--sun { display: none; }
+:root[data-theme="dark"] .theme-toggle__icon--moon { display: block; }
+
 .nav__toggle {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: 0; cursor: pointer; padding: .4rem;
@@ -101,7 +171,7 @@ img { max-width: 100%; height: auto; }
   .nav__menu {
     position: absolute; inset: 100% 0 auto 0;
     flex-direction: column; gap: 0;
-    background: var(--bg); border-bottom: 1px solid var(--border);
+    background: var(--nav-menu-bg); border-bottom: 1px solid var(--border);
     padding: .5rem 1.25rem 1rem;
     display: none;
   }
@@ -395,8 +465,8 @@ img { max-width: 100%; height: auto; }
 }
 .field textarea { resize: vertical; }
 .form__status { font-weight: 500; margin: 0; }
-.form__status.is-error { color: #ff7a6b; }
-.form__status.is-success { color: #6fd394; }
+.form__status.is-error { color: var(--status-error); }
+.form__status.is-success { color: var(--status-success); }
 
 /* ---- Footer ---- */
 .site-footer {
