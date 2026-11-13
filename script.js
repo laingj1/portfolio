@@ -1,3 +1,30 @@
+// Theme toggle: light (frosted glass) is the default; dark is opt-in and
+// remembered in localStorage. The inline script in <head> already applies
+// a stored 'dark' preference before first paint, to avoid a flash.
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+  const root = document.documentElement;
+
+  function syncThemeToggleLabel() {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      root.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    syncThemeToggleLabel();
+  });
+
+  syncThemeToggleLabel();
+}
+
 // Mobile nav toggle
 const toggle = document.querySelector('.nav__toggle');
 const menu = document.getElementById('nav-menu');
