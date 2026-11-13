@@ -266,25 +266,25 @@ img { max-width: 100%; height: auto; }
 }
 .hero__shape { position: absolute; pointer-events: none; }
 .hero__shape--circle-lg {
-  width: 56%; aspect-ratio: 1 / 1; border-radius: 50%;
+  width: 46%; aspect-ratio: 1 / 1; border-radius: 50%;
   background: color-mix(in srgb, var(--accent) 55%, transparent);
-  top: 6%; right: 4%;
+  top: 14%; right: 14%;
 }
 .hero__shape--circle-sm {
-  width: 15%; aspect-ratio: 1 / 1; border-radius: 50%;
+  width: 13%; aspect-ratio: 1 / 1; border-radius: 50%;
   background: var(--hero-shape-secondary);
-  bottom: 12%; right: 10%;
+  bottom: 22%; right: 18%;
 }
 .hero__shape--half {
-  width: 17%; aspect-ratio: 2 / 1; border-radius: 999px 999px 0 0;
+  width: 15%; aspect-ratio: 2 / 1; border-radius: 999px 999px 0 0;
   background: var(--hero-shape-secondary);
-  top: 9%; left: 8%;
+  top: 18%; left: 20%;
 }
 .hero__shape--dots {
-  width: 26%; aspect-ratio: 1 / 1;
+  width: 22%; aspect-ratio: 1 / 1;
   background-image: radial-gradient(circle, var(--hero-border) 2.2px, transparent 2.2px);
   background-size: 16px 16px;
-  bottom: 10%; left: 6%;
+  bottom: 18%; left: 16%;
 }
 .hero__frame {
   position: relative;
@@ -355,13 +355,6 @@ img { max-width: 100%; height: auto; }
 .service-card h3 { font-size: 1.15rem; margin: 1.25rem 0 .5rem; }
 .service-card p { color: var(--muted); margin: 0; font-size: .95rem; }
 .service-card__icon { color: var(--accent); }
-.service-card--accent {
-  background: color-mix(in srgb, var(--accent) 14%, var(--bg-panel-alt));
-  border-color: var(--accent);
-}
-.service-card--accent .service-card__icon { color: var(--accent); }
-.service-card--accent p { color: var(--muted); }
-.service-card--accent:hover { transform: translateY(-3px); border-color: var(--accent-dark); }
 
 /* ---- Project / portfolio cards ---- */
 .portfolio { background: var(--bg-alt); }
@@ -568,6 +561,7 @@ img { max-width: 100%; height: auto; }
 .tl { position: relative; padding-left: 2rem; margin-bottom: 1rem; }
 .tl[hidden] { display: none; }
 .tl__item {
+  position: relative;
   background: var(--bg-panel-alt); border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: border-color .15s, background .15s;
@@ -583,7 +577,7 @@ img { max-width: 100%; height: auto; }
 .tl__summary::-webkit-details-marker { display: none; }
 .tl__summary-text { display: grid; gap: .15rem; flex: 1; min-width: 0; }
 .tl__dot {
-  position: absolute; left: 0; top: 1.2rem;
+  position: absolute; left: -2rem; top: 1.2rem;
   width: 16px; height: 16px; border-radius: 50%;
   background: var(--bg-alt); border: 3px solid var(--accent);
 }
