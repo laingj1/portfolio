@@ -410,7 +410,6 @@ img { max-width: 100%; height: auto; }
   display: grid; gap: 1.5rem;
   margin: 2rem 0 2.5rem;
 }
-.case-highlight.case-highlight--facts-only { grid-template-columns: 1fr; }
 @media (min-width: 700px) {
   .case-highlight { grid-template-columns: 1.2fr 1fr; align-items: stretch; gap: 2rem; }
 }
@@ -461,6 +460,20 @@ img { max-width: 100%; height: auto; }
 .case-quote cite { font-style: normal; color: var(--muted); font-size: .85rem; }
 
 .case-actions { margin-top: 2rem; }
+
+.project__more-toggle {
+  cursor: pointer; list-style: none;
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-weight: 600; color: var(--accent-text);
+  margin-top: 1.5rem;
+}
+.project__more-toggle::-webkit-details-marker { display: none; }
+.project__more-toggle:hover { text-decoration: underline; }
+.project__more-toggle::before {
+  content: "+"; display: inline-block; width: 1em; text-align: center;
+}
+.project__more[open] .project__more-toggle::before { content: "–"; }
+.project__more[open] .project__more-toggle { margin-bottom: 0; }
 
 /* ---- About ---- */
 .about { max-width: 68ch; }
