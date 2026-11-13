@@ -505,7 +505,6 @@ img { max-width: 100%; height: auto; }
 }
 .tl__item:hover, .tl__item:focus-within {
   border-color: var(--accent);
-  background: color-mix(in srgb, var(--bg-panel-alt) 80%, var(--accent) 6%);
 }
 .tl__summary {
   display: flex; align-items: center; gap: 1rem;
