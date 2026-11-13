@@ -326,9 +326,6 @@ img { max-width: 100%; height: auto; }
 /* ---- Project / portfolio cards ---- */
 .portfolio { background: var(--bg-alt); }
 .cases { display: grid; gap: 2rem; }
-@media (min-width: 860px) {
-  .cases { grid-template-columns: repeat(2, 1fr); align-items: start; }
-}
 .case {
   display: grid; gap: 1.5rem;
   grid-template-columns: 1fr;
@@ -339,6 +336,32 @@ img { max-width: 100%; height: auto; }
 .case:hover { border-color: var(--accent); }
 .case__media { background: var(--bg-panel); position: relative; }
 .case__media img { display: block; width: 100%; height: auto; }
+.case__phone { position: relative; width: 100%; }
+
+/* Screenshot (gallery) mode: present the screenshot inside an iPhone frame
+   rather than full-bleed, since it's an app screen, not cover art. */
+.case__media--gallery {
+  display: flex; align-items: center; justify-content: center;
+  padding: 2.75rem 1.5rem;
+  background-image: radial-gradient(ellipse at 50% 35%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 72%);
+}
+.case__media--gallery .case__phone {
+  width: min(220px, 56vw);
+  aspect-ratio: 840 / 1500;
+  border-radius: 2.4rem;
+  background: #111214;
+  padding: 9px;
+  box-shadow: 0 30px 55px -18px rgba(15, 18, 30, 0.5), inset 0 0 0 1.5px rgba(255, 255, 255, 0.08);
+}
+.case__media--gallery .case__phone::after {
+  content: "";
+  position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
+  width: 32%; height: 16px; border-radius: 9px;
+  background: #111214;
+}
+.case__media--gallery .case__media-img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 1.85rem;
+}
 .case__gallery-btn {
   position: absolute; right: 1rem; bottom: 1rem;
   display: inline-flex; align-items: center; gap: .45rem;
