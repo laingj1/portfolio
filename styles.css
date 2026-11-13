@@ -248,17 +248,21 @@ img { max-width: 100%; height: auto; }
 .hero__scroll:hover { color: var(--accent); }
 
 .hero__panel--graphic {
-  position: relative; overflow: hidden; min-height: 280px;
-  background:
-    radial-gradient(ellipse 60% 55% at 28% 24%, color-mix(in srgb, var(--accent) 55%, transparent), transparent 60%),
-    radial-gradient(ellipse 55% 50% at 82% 78%, rgba(99, 140, 255, .35), transparent 60%),
-    linear-gradient(160deg, #1a1c27, #2c2013);
+  position: relative; overflow: hidden; min-height: 320px;
+  background-color: #1a1c27;
   background-image:
+    /* concentric rings, orbiting the main glow */
+    radial-gradient(circle at 68% 58%, transparent 29%, rgba(255, 255, 255, .14) 29.4%, rgba(255, 255, 255, .14) 29.8%, transparent 30.2%),
+    radial-gradient(circle at 68% 58%, transparent 43%, color-mix(in srgb, var(--accent) 45%, transparent) 43.4%, color-mix(in srgb, var(--accent) 45%, transparent) 43.9%, transparent 44.3%),
+    radial-gradient(circle at 68% 58%, transparent 58%, rgba(255, 255, 255, .09) 58.4%, rgba(255, 255, 255, .09) 58.8%, transparent 59.2%),
+    /* dotted grid texture */
     radial-gradient(circle, rgba(255, 255, 255, .12) 1.5px, transparent 1.5px),
-    radial-gradient(ellipse 60% 55% at 28% 24%, color-mix(in srgb, var(--accent) 55%, transparent), transparent 60%),
-    radial-gradient(ellipse 55% 50% at 82% 78%, rgba(99, 140, 255, .35), transparent 60%),
+    /* color blobs */
+    radial-gradient(ellipse 48% 42% at 68% 58%, color-mix(in srgb, var(--accent) 60%, transparent), transparent 65%),
+    radial-gradient(ellipse 45% 40% at 10% 88%, rgba(99, 140, 255, .32), transparent 62%),
+    radial-gradient(ellipse 38% 34% at 92% 8%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 65%),
     linear-gradient(160deg, #1a1c27, #2c2013);
-  background-size: 28px 28px, auto, auto, auto;
+  background-size: auto, auto, auto, 28px 28px, auto, auto, auto, auto;
 }
 
 /* ---- Sections (general) ---- */
