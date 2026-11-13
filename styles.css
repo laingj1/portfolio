@@ -186,7 +186,6 @@ img { max-width: 100%; height: auto; }
     display: none;
     backdrop-filter: var(--panel-blur);
     -webkit-backdrop-filter: var(--panel-blur);
-    box-shadow: var(--glass-shadow);
   }
   .nav__menu.is-open { display: flex; }
   .nav__menu li { padding: .5rem 0; }
