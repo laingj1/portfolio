@@ -70,7 +70,6 @@ body {
    tokens (--bg-panel / --bg-panel-alt), so this adds the frosted-glass
    blur and lift once. --panel-blur/--glass-shadow collapse to none in
    dark mode, leaving the original solid-panel look untouched there. */
-.hero__visual,
 .service-card,
 .case,
 .case__media,
@@ -197,67 +196,77 @@ img { max-width: 100%; height: auto; }
   border-color: var(--accent-dark);
 }
 
-/* ---- Hero ---- */
-.hero { padding: var(--space) 0 calc(var(--space) * .6); background: var(--bg); }
-.hero__grid {
-  width: min(100% - 2.5rem, var(--max)); margin-inline: auto;
-  display: grid; gap: 2.5rem; grid-template-columns: 1fr;
-  align-items: center;
-}
+/* ---- Hero ----
+   Full-bleed two-panel layout: a dark color-block panel carries the
+   introduction and actions, paired with an abstract graphic panel
+   (standing in for a portrait) rather than a small card-style visual. */
+.hero { display: grid; grid-template-columns: 1fr; }
 @media (min-width: 860px) {
-  .hero__grid { grid-template-columns: minmax(0, 320px) 1fr; gap: 4rem; }
+  .hero { grid-template-columns: minmax(0, 46%) 1fr; min-height: min(82vh, 660px); }
 }
 
-.hero__visual {
-  background: linear-gradient(160deg, var(--bg-panel), var(--bg-panel-alt));
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 2.5rem 2rem;
-  display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem;
-  position: relative; overflow: hidden;
-}
-.hero__visual::before {
-  content: ""; position: absolute; inset: auto -30% -40% auto;
-  width: 220px; height: 220px; border-radius: 50%;
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
-}
-.hero__avatar {
+.hero__panel--content {
   position: relative;
-  width: 96px; height: 96px; border-radius: 50%;
-  background: color-mix(in srgb, var(--accent) 20%, var(--bg-panel));
-  color: var(--accent-dark);
-  display: grid; place-items: center;
-  font-family: var(--font-head); font-weight: 800; font-size: 2rem;
-  border: 3px solid var(--accent);
+  background: linear-gradient(155deg, #2b2f44 0%, #1a1c27 55%, #2c2013 100%);
+  color: #f4f1ea;
+  padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 4rem) clamp(5rem, 9vw, 6.5rem);
+  display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
 }
-.hero__nameplate {
-  position: relative;
-  font-family: var(--font-head); font-weight: 800;
-  font-size: clamp(1.6rem, 3vw, 2rem); margin: 0;
+.hero__panel--content .hero__kicker { color: var(--accent); }
+.hero__panel--content .hero__title { color: #fff; }
+.hero__panel--content .hero__lead { color: rgba(244, 241, 234, .74); }
+.hero__panel--content .btn--ghost { color: #fff; }
+
+.hero__kicker {
+  text-transform: uppercase; letter-spacing: .12em;
+  font-size: .8rem; font-weight: 700; margin-bottom: 0;
 }
-.hero__nameplate-accent { color: var(--accent); }
-.hero__iconlinks {
-  position: relative;
-  list-style: none; display: flex; gap: .75rem; margin: 0; padding: 0;
-}
+.hero__title { font-size: clamp(2rem, 4vw, 2.75rem); max-width: 18ch; }
+.hero__lead { font-size: 1.1rem; max-width: 46ch; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: .5rem; }
+
+.hero__follow { display: flex; align-items: center; gap: 1rem; margin-top: 2rem; }
+.hero__follow-label { font-size: .85rem; color: rgba(244, 241, 234, .6); font-weight: 600; }
+.hero__iconlinks { list-style: none; display: flex; gap: .6rem; margin: 0; padding: 0; }
 .hero__iconlinks a {
   display: grid; place-items: center;
-  width: 40px; height: 40px; border-radius: 50%;
-  border: 1px solid var(--border); color: var(--text);
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid rgba(244, 241, 234, .25); color: #f4f1ea;
   transition: border-color .15s, color .15s, background .15s;
 }
 .hero__iconlinks a:hover {
   border-color: var(--accent); color: var(--accent-ink); background: var(--accent);
 }
 
-.hero__content { max-width: 640px; }
-.hero__kicker {
-  text-transform: uppercase; letter-spacing: .12em;
-  font-size: .8rem; color: var(--accent); font-weight: 700; margin-bottom: 1rem;
+.hero__scroll {
+  position: absolute; left: clamp(1.5rem, 6vw, 4rem); bottom: 2.5rem;
+  display: flex; flex-direction: column; align-items: center; gap: .6rem;
+  color: rgba(244, 241, 234, .5);
+  transition: color .15s;
 }
-.hero__title { font-size: clamp(2rem, 4.5vw, 2.9rem); }
-.hero__lead { font-size: 1.15rem; color: var(--muted); max-width: 48ch; }
-.hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.75rem; }
+.hero__scroll::before { content: ""; width: 1px; height: 38px; background: currentColor; }
+.hero__scroll:hover { color: var(--accent); }
+
+.hero__panel--graphic {
+  position: relative; overflow: hidden; min-height: 280px;
+  background:
+    radial-gradient(ellipse 60% 55% at 28% 24%, color-mix(in srgb, var(--accent) 55%, transparent), transparent 60%),
+    radial-gradient(ellipse 55% 50% at 82% 78%, rgba(99, 140, 255, .35), transparent 60%),
+    linear-gradient(160deg, #1a1c27, #2c2013);
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, .12) 1.5px, transparent 1.5px),
+    radial-gradient(ellipse 60% 55% at 28% 24%, color-mix(in srgb, var(--accent) 55%, transparent), transparent 60%),
+    radial-gradient(ellipse 55% 50% at 82% 78%, rgba(99, 140, 255, .35), transparent 60%),
+    linear-gradient(160deg, #1a1c27, #2c2013);
+  background-size: 28px 28px, auto, auto, auto;
+}
+.hero__monogram {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(7rem, 20vw, 15rem);
+  letter-spacing: -.04em;
+  color: rgba(255, 255, 255, .07);
+}
 
 /* ---- Sections (general) ---- */
 .section { padding: var(--space) 0; }
