@@ -317,7 +317,7 @@ img { max-width: 100%; height: auto; }
 .stat__label { display: block; color: var(--muted); font-size: .9rem; }
 
 /* ---- Services / cards ---- */
-.services { padding: var(--space) 0; background: var(--bg); }
+.services { padding: var(--space) 0; }
 .service-cards {
   display: grid; gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -334,7 +334,6 @@ img { max-width: 100%; height: auto; }
 .service-card__icon { color: var(--accent-text); }
 
 /* ---- Project / portfolio cards ---- */
-.portfolio { background: var(--bg-alt); }
 .cases { display: grid; gap: 2rem; }
 @media (min-width: 860px) {
   .cases { grid-template-columns: repeat(2, 1fr); align-items: start; }
