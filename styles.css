@@ -308,11 +308,6 @@ img { max-width: 100%; height: auto; }
 }
 .section__intro { color: var(--muted); max-width: 60ch; margin-bottom: 2.5rem; }
 
-/* ---- Band (plain strip, no cards) ---- */
-.band { padding: var(--space) 0; background: var(--bg-alt); border-block: 1px solid var(--border); }
-.band__content { text-align: center; }
-.band__content .section__intro { margin-inline: auto; }
-
 /* ---- Stats strip ---- */
 .stats { padding: var(--space) 0; background: var(--bg-alt); border-block: 1px solid var(--border); }
 .stats__grid {
@@ -328,6 +323,10 @@ img { max-width: 100%; height: auto; }
   color: var(--accent); margin-top: .5rem;
 }
 .stats__link:hover { text-decoration: underline; }
+
+/* No stats numbers to pair with, so let the text column run full width
+   instead of squeezing into the grid's half column. */
+.stats--full .stats__text { max-width: 60ch; }
 .stats__quote {
   font-family: var(--font-head); font-weight: 600; font-size: 1.2rem;
   color: var(--text); font-style: normal; margin-bottom: 2rem;
