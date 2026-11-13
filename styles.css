@@ -188,8 +188,14 @@ img { max-width: 100%; height: auto; }
 }
 .btn--primary { background: var(--accent); color: var(--accent-ink); }
 .btn--primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
-.btn--ghost { border-color: var(--border); color: var(--text); }
-.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn--ghost {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border-color: var(--accent); color: var(--text);
+}
+.btn--ghost:hover {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  border-color: var(--accent-dark);
+}
 
 /* ---- Hero ---- */
 .hero { padding: var(--space) 0 calc(var(--space) * .6); background: var(--bg); }
