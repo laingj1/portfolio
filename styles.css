@@ -411,7 +411,7 @@ img { max-width: 100%; height: auto; }
   margin: 2rem 0 2.5rem;
 }
 @media (min-width: 700px) {
-  .case-highlight { grid-template-columns: 1.2fr 1fr; align-items: stretch; gap: 2rem; }
+  .case-highlight { grid-template-columns: 1fr 1fr; align-items: stretch; gap: 2rem; }
 }
 
 .case-media {
