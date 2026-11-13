@@ -401,10 +401,16 @@ img { max-width: 100%; height: auto; }
 .card__link:hover { text-decoration: underline; }
 
 /* ---- Case study (work) ---- */
+.project__title { font-size: 1.4rem; margin-bottom: .75rem; }
+.project + .project {
+  margin-top: 3.5rem; padding-top: 3.5rem;
+  border-top: 1px solid var(--border);
+}
 .case-highlight {
   display: grid; gap: 1.5rem;
   margin: 2rem 0 2.5rem;
 }
+.case-highlight.case-highlight--facts-only { grid-template-columns: 1fr; }
 @media (min-width: 700px) {
   .case-highlight { grid-template-columns: 1.2fr 1fr; align-items: stretch; gap: 2rem; }
 }
