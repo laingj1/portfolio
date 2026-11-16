@@ -490,17 +490,16 @@
               <ul class="card__tags">
                 <li>React</li><li>Cloudflare Pages</li><li>D1</li><li>Plaid</li>
               </ul>
-              <p class="case__desc"><strong>Problem:</strong> I wanted a fast way to track spending by week without a subscription budgeting app or a spreadsheet I'd never open, and I wanted it to pull in real transactions instead of manual entry.</p>
-              <p class="case__desc"><strong>Approach:</strong> A React app on Cloudflare Pages, with a Pages Functions API and a Cloudflare D1 database, and Plaid to sync bank transactions so they can be categorized automatically against a weekly budget.</p>
-              <p class="case__desc"><strong>Workflow:</strong> Every change starts as a GitHub branch. Cloudflare Pages builds a preview ("multidev") deployment for each one, so I can review and test a change live before merging to the branch that powers production.</p>
+              <p class="case__desc"><strong>Problem:</strong> I wanted a fast way to track spending by week without a subscription budgeting app or a spreadsheet I'd never open, and I wanted it to pull in my real transactions instead of typing them in by hand.</p>
+              <p class="case__desc"><strong>Approach:</strong> A simple web app that securely connects to my bank, pulls in transactions automatically, and sorts them against a weekly budget so I always know what's left to spend.</p>
               <dl class="case__split">
                 <div>
                   <dt>What I directed</dt>
-                  <dd>The budget-item data model, the invite-only account system and JWT-based auth, the transaction-categorization rules, and the Cloudflare deployment (Pages, Pages Functions, D1).</dd>
+                  <dd>How budgets and spending fit together, the private login system, and the rules for how transactions get sorted into categories.</dd>
                 </div>
                 <div>
                   <dt>What AI handled</dt>
-                  <dd>Boilerplate React components, the first draft of the Plaid integration, and repetitive API route scaffolding, all of which I tested and reviewed.</dd>
+                  <dd>First drafts of the app's screens and the bank-connection code, which I then tested and reviewed.</dd>
                 </div>
               </dl>
               <p class="case__desc"><strong>Status:</strong> Live and in daily use, invite-only (no public sign-up).</p>
@@ -528,16 +527,16 @@
               <ul class="card__tags">
                 <li>React Native (Expo)</li><li>Fastify</li><li>PostgreSQL</li>
               </ul>
-              <p class="case__desc"><strong>Problem:</strong> Getting ready for our first baby, my wife and I knew we'd need a shared, accurate record of feeds, sleep, and diaper changes. "When was the last feeding?" is a hard question to answer from memory at 3 a.m., and once daycare entered the picture, we needed to compare what happened at home with what happened during the day. We didn't want yet another subscription, and we wanted both of us to see the same thing at the same time.</p>
-              <p class="case__desc"><strong>Approach:</strong> A React Native (Expo) app backed by a Fastify API, with live feed, sleep, and pump timers that live on the server, so both caregivers always see the same state and a timer survives the app being closed. Optional AI-written insights sit on top of a rule-based rhythm model, not raw AI guesses.</p>
+              <p class="case__desc"><strong>Problem:</strong> Getting ready for our first baby, my wife and I knew we'd need a shared, accurate record of feeds, sleep, and diaper changes. "When was the last feeding?" is a hard question to answer from memory at 3 a.m., and once daycare entered the picture, we needed to compare notes with them too. We didn't want yet another subscription, and we wanted both of us to see the same thing at the same time.</p>
+              <p class="case__desc"><strong>Approach:</strong> A phone app my wife and I both use, with live timers for feeds, sleep, and pumping that stay in sync between our phones in real time. It also offers simple suggestions for what's likely next, based on our own recent patterns, not raw AI guesses.</p>
               <dl class="case__split">
                 <div>
                   <dt>What I directed</dt>
-                  <dd>The timer-on-server architecture, the rhythm algorithm that suggests what's likely next from the baby's own recent data, the auth design (hashed passwords, rotating refresh tokens with reuse detection), and the guardrails around AI insights (schema-checked, screened for medical language, cached by input).</dd>
+                  <dd>How the live timers stay in sync between phones, the logic behind the suggestions, the account security, and the guardrails that keep the AI-written insights safe and sensible.</dd>
                 </div>
                 <div>
                   <dt>What AI handled</dt>
-                  <dd>Boilerplate scaffolding, first-draft route handlers and UI components, and repetitive test setup, all reviewed and tested.</dd>
+                  <dd>First drafts of the screens and backend code, plus repetitive test writing, all of which I reviewed and tested.</dd>
                 </div>
               </dl>
               <p class="case__desc"><strong>Status:</strong> In active development as a mobile app; not yet released.</p>
