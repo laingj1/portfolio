@@ -287,13 +287,14 @@ img { max-width: 100%; height: auto; }
 .section__intro { color: var(--muted); max-width: 60ch; margin-bottom: 2.5rem; }
 
 /* ---- About, with stats stacked alongside ---- */
-.about__layout { display: grid; gap: 2.5rem; }
+.about__layout { display: flex; flex-direction: column; gap: 2.5rem; }
 @media (min-width: 760px) {
-  .about__layout { grid-template-columns: 1fr auto; align-items: start; gap: 4rem; }
+  .about__layout { flex-direction: row; align-items: flex-start; gap: 3rem; }
+  .about { flex: 0 1 auto; min-width: 0; }
 }
 .about__stats {
   display: grid; gap: 1.75rem; align-content: start;
-  padding: 1.75rem 2rem; min-width: 220px;
+  padding: 1.75rem 2rem; min-width: 220px; flex: none;
   background: var(--bg-panel-alt); border: 1px solid var(--border); border-radius: var(--radius);
 }
 .stat__value {
