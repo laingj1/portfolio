@@ -195,7 +195,7 @@ img { max-width: 100%; height: auto; }
 .hero__panel--content {
   position: relative;
   color: var(--hero-text);
-  padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 4rem) clamp(5rem, 9vw, 6.5rem);
+  padding: clamp(3rem, 7vw, 5rem) 0 clamp(5rem, 9vw, 6.5rem);
   display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
 }
 .hero__panel--content .hero__kicker { color: var(--accent-text); }
