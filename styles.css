@@ -289,7 +289,7 @@ img { max-width: 100%; height: auto; }
 /* ---- About, with stats stacked alongside ---- */
 .about__layout { display: flex; flex-direction: column; gap: 2.5rem; }
 @media (min-width: 760px) {
-  .about__layout { flex-direction: row; align-items: flex-start; gap: 3rem; }
+  .about__layout { flex-direction: row; align-items: center; gap: 3rem; }
   .about { flex: 0 1 auto; min-width: 0; }
 }
 .about__stats {
